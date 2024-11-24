@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Articles.md",
+                "file": "Stuff/Snippets.md",
                 "mode": "preview",
                 "source": true
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Stuff/Articles.md",
+                "file": "Stuff/Snippets.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Stuff/Articles.md",
+                "file": "Stuff/Snippets.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Stuff/Articles.md"
+                "file": "Stuff/Snippets.md"
               }
             }
           },
@@ -167,17 +167,17 @@
   },
   "active": "a492c53ded197380",
   "lastOpenFiles": [
+    "Snippets/Linux.md",
+    "Stuff/Snippets.md",
+    "Stuff/Goods.md",
+    "Stuff/Articles.md",
+    "Stuff/kubectl.md",
     "Snippets/Darwin/macos.md",
     "Snippets/Darwin/dnsmasq.md",
-    "Snippets/Linux.md",
     "Snippets/Containers.md",
     "Snippets/Common.md",
     "Stuff/Notes.md",
     "Stuff/Schemes.md",
-    "Stuff/Snippets.md",
-    "Stuff/kubectl.md",
-    "Stuff/Articles.md",
-    "Stuff/Goods.md",
     "CV/CV.pdf",
     "Raw/Notes/Tracing the path of network traffic in Kubernetes.md",
     "Raw/Notes/Kubernetes Pod IP Conflict.md",

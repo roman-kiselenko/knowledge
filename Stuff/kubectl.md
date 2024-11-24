@@ -1,7 +1,7 @@
 ### Common kubectl command
 
 ```query
-content:kubectl path:Stuff
+content:kubectl path:Stuff/kubectl
 ```
 
 #### Cluster Information
