@@ -1,0 +1,15 @@
+{
+  "accentColor": "#5351c8",
+  "theme": "system",
+  "textFontFamily": "Work Sans",
+  "interfaceFontFamily": "Work Sans",
+  "monospaceFontFamily": "SauceCodePro Nerd Font Mono",
+  "baseFontSize": 16,
+  "baseFontSizeAction": false,
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [
+    "tableStyles",
+    "images"
+  ],
+  "showViewHeader": true
+}

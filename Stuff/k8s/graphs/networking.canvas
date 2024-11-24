@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"d3fbf383b49fb36d","type":"text","text":"# [Services, Endpoints, EndpointSlice](https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/)\n> Service registration & discovery","x":-211,"y":-440,"width":340,"height":152,"color":"#8981ee"},
+		{"id":"0bb100eb11964090","type":"text","text":"# [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/#what-is-ingress)\n> L7 HTTP routing","x":-211,"y":-262,"width":233,"height":105,"color":"#8981ee"},
+		{"id":"3a0d87956b3c958e","type":"text","text":"# [Gateway](https://kubernetes.io/docs/concepts/services-networking/gateway/)\n> Next generation of HTTP routing & service ingress","x":-211,"y":-120,"width":285,"height":130,"color":"#8981ee"},
+		{"id":"0c18d931f718a4c5","type":"text","text":"# [NetworkPolicy](https://kubernetes.io/docs/concepts/services-networking/network-policies/)\n> Application firewall","x":-211,"y":44,"width":260,"height":116,"color":"#8981ee"},
+		{"id":"7a81c66a6a6a580f","type":"text","text":"# APIs","x":-500,"y":-157,"width":171,"height":61,"color":"4"},
+		{"id":"e302a5df64b89911","type":"text","text":"# [Kubelet CNI implementation](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)\n> Low level network drivers","x":460,"y":-403,"width":340,"height":112,"color":"#8981ee"},
+		{"id":"2accc7d87f394066","type":"text","text":"# [kube-proxy](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)\n> Implement Service API","x":460,"y":-265,"width":340,"height":112,"color":"#8981ee"},
+		{"id":"3a4e429861689a1d","type":"text","text":"# Controllers\n- Endpoins and EndpointSlice\n- Service load-balancers\n- [IPAM](https://docs.cilium.io/en/stable/network/concepts/ipam/)","x":460,"y":-115,"width":340,"height":171,"color":"#8981ee"},
+		{"id":"439f341028437e0a","type":"text","text":"# [DNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)\n> Name-based discovery\n\n![[Pasted image 20240310174012.png]]","x":460,"y":98,"width":380,"height":302,"color":"6"},
+		{"id":"e6f4507e51bea5ce","type":"text","text":"# Components","x":129,"y":-157,"width":191,"height":50,"color":"4"},
+		{"id":"490f30cc4f9ae572","type":"text","text":"# [NodeLocal DNS](https://kubernetes.io/docs/tasks/administer-cluster/nodelocaldns/#introduction)\n\n>NodeLocal DNSCache improves Cluster DNS performance by running a DNS caching agent on cluster nodes as a DaemonSet.","x":960,"y":102,"width":336,"height":189,"color":"6"},
+		{"id":"7928b463c83d16f3","type":"text","text":"# [kube-proxy](https://kubernetes.io/docs/concepts/overview/components/#kube-proxy)\n\n> There is an optional addon that provides cluster DNS for these cluster IPs.","x":960,"y":344,"width":336,"height":160,"color":"6"}
+	],
+	"edges":[
+		{"id":"1b8de6421f68b601","fromNode":"7a81c66a6a6a580f","fromSide":"right","toNode":"d3fbf383b49fb36d","toSide":"left","toEnd":"none","color":"4"},
+		{"id":"8ecc1a5b4348f3eb","fromNode":"7a81c66a6a6a580f","fromSide":"right","toNode":"0bb100eb11964090","toSide":"left","toEnd":"none","color":"4"},
+		{"id":"188562572e532e59","fromNode":"7a81c66a6a6a580f","fromSide":"right","toNode":"3a0d87956b3c958e","toSide":"left","toEnd":"none","color":"4"},
+		{"id":"15b13952c76fc553","fromNode":"7a81c66a6a6a580f","fromSide":"right","toNode":"0c18d931f718a4c5","toSide":"left","toEnd":"none","color":"4"},
+		{"id":"9e493fe879423aa2","fromNode":"e6f4507e51bea5ce","fromSide":"right","toNode":"e302a5df64b89911","toSide":"left","toEnd":"none","color":"4"},
+		{"id":"1dafe53c1804b09f","fromNode":"e6f4507e51bea5ce","fromSide":"right","toNode":"2accc7d87f394066","toSide":"left","toEnd":"none","color":"4"},
+		{"id":"9bc107c3beaa5b9d","fromNode":"e6f4507e51bea5ce","fromSide":"right","toNode":"3a4e429861689a1d","toSide":"left","toEnd":"none","color":"4"},
+		{"id":"56197115361c6768","fromNode":"e6f4507e51bea5ce","fromSide":"right","toNode":"439f341028437e0a","toSide":"left","toEnd":"none","color":"4"},
+		{"id":"1901e62de65ef5d8","fromNode":"439f341028437e0a","fromSide":"right","toNode":"490f30cc4f9ae572","toSide":"left","toEnd":"none"},
+		{"id":"8ecaa23e5dc4c723","fromNode":"439f341028437e0a","fromSide":"right","toNode":"7928b463c83d16f3","toSide":"left","toEnd":"none"}
+	]
+}

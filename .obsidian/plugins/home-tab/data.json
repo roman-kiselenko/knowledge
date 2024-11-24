@@ -1,0 +1,53 @@
+{
+  "logoType": "none",
+  "logo": {
+    "lucideIcon": "",
+    "imagePath": "",
+    "imageLink": ""
+  },
+  "logoScale": 1.2,
+  "iconColorType": "default",
+  "wordmark": "",
+  "customFont": "interfaceFont",
+  "fontSize": "5em",
+  "fontColorType": "default",
+  "fontWeight": 600,
+  "maxResults": 5,
+  "showStarredFiles": false,
+  "showRecentFiles": false,
+  "maxRecentFiles": 5,
+  "storeRecentFile": true,
+  "showPath": true,
+  "selectionHighlight": "default",
+  "showShortcuts": true,
+  "markdownOnly": false,
+  "unresolvedLinks": false,
+  "recentFilesStore": [
+    {
+      "filepath": "Stuff/Articles.md",
+      "timestamp": 1732432569857
+    },
+    {
+      "filepath": "Snippets/Darwin/macos.md",
+      "timestamp": 1732432555124
+    },
+    {
+      "filepath": "Snippets/Darwin/dnsmasq.md",
+      "timestamp": 1732432549466
+    },
+    {
+      "filepath": "Snippets/Linux.md",
+      "timestamp": 1732432538293
+    },
+    {
+      "filepath": "Snippets/Containers.md",
+      "timestamp": 1732432484311
+    }
+  ],
+  "starredFileStore": [],
+  "searchDelay": 0,
+  "replaceNewTabs": true,
+  "newTabOnStart": false,
+  "closePreviousSessionTabs": false,
+  "omnisearch": false
+}

@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"e850476b3c29b92b","type":"file","file":"Stuff/k8s/CRI/CRI-O.md","x":-1509,"y":-507,"width":362,"height":280,"color":"1"},
+		{"id":"38faa9bbe3c96168","type":"file","file":"Stuff/k8s/CRI/containerd.md","x":-1067,"y":-507,"width":340,"height":280,"color":"1"},
+		{"id":"fd82cb6373c6cbbb","type":"file","file":"Stuff/k8s/CNI/flannel.md","x":-650,"y":-507,"width":377,"height":206,"color":"5"},
+		{"id":"7a1d520413ea6fc3","type":"file","file":"Stuff/k8s/CNI/cilium.md","x":260,"y":-507,"width":400,"height":421,"color":"5"},
+		{"id":"1392651911c2eb6b","type":"file","file":"Stuff/k8s/CNI/antrea.md","x":-414,"y":-195,"width":400,"height":335,"color":"5"},
+		{"id":"5361d8fc5b60dbf5","type":"text","text":"# nerdctl\n> Docker-compatible CLI for containerd\n\n[ref](https://github.com/containerd/nerdctl)\n\n#cli","x":-820,"y":-86,"width":316,"height":266,"color":"4"},
+		{"id":"5c42ce247d9c5a4d","type":"text","text":"# cri-tools\n> CLI and validation tools for Kubelet Container Runtime Interface (CRI)\n\n[ref](https://github.com/kubernetes-sigs/cri-tools)\n\n#cli","x":-1660,"y":-86,"width":380,"height":266,"color":"4"},
+		{"id":"26f15c87aa97569f","type":"text","text":"# NRI\n> NRI allows plugging domain- or vendor-specific custom logic into OCI- compatible runtimes.\n[ref](https://github.com/containerd/nri)","x":-1217,"y":-86,"width":300,"height":240,"color":"6"},
+		{"id":"c2bfed3164879ac4","type":"text","text":"# CRI","x":-820,"y":-760,"width":227,"height":90,"color":"1"},
+		{"id":"4c7482e4b9826ddc","type":"text","text":"# CNI\n[cni.dev](https://cni.dev)","x":-414,"y":-760,"width":226,"height":90,"color":"5"},
+		{"id":"987690ada877794a","type":"file","file":"Stuff/k8s/CNI/calico.md","x":-188,"y":-507,"width":400,"height":280,"color":"5"},
+		{"id":"588a11b3838e5961","type":"text","text":"# [Kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)\n\n> primary \"node agent\" that runs on each node. It can register the node with the apiserver using one of: the hostname; a flag to override the hostname; or specific logic for a cloud provider.\n\n","x":-820,"y":-1080,"width":632,"height":200},
+		{"id":"e8fc9b1cd180eb03","type":"text","text":"# Runtimes Containers\n- https://github.com/containers/crun\n- https://github.com/containers/youki\n- https://github.com/opencontainers/runc\n\n# Runtimes Virtual Machines\n- https://github.com/kata-containers/kata-containers\n- https://github.com/google/gvisor\n\n# Runtime Tools\n- https://github.com/opencontainers/runtime-tools","x":-1321,"y":280,"width":508,"height":480}
+	],
+	"edges":[
+		{"id":"107702ad79068551","fromNode":"c2bfed3164879ac4","fromSide":"bottom","toNode":"e850476b3c29b92b","toSide":"top","color":"1"},
+		{"id":"9f5cc7336c54e59c","fromNode":"c2bfed3164879ac4","fromSide":"bottom","toNode":"38faa9bbe3c96168","toSide":"top","color":"1"},
+		{"id":"63c820a69f5a489f","fromNode":"4c7482e4b9826ddc","fromSide":"bottom","toNode":"fd82cb6373c6cbbb","toSide":"top","color":"5"},
+		{"id":"6d134908a76977ef","fromNode":"4c7482e4b9826ddc","fromSide":"bottom","toNode":"987690ada877794a","toSide":"top","color":"5"},
+		{"id":"f97603016fff6356","fromNode":"4c7482e4b9826ddc","fromSide":"bottom","toNode":"7a1d520413ea6fc3","toSide":"top","color":"5"},
+		{"id":"9f95f93a1e19bdd9","fromNode":"4c7482e4b9826ddc","fromSide":"bottom","toNode":"1392651911c2eb6b","toSide":"top","color":"5"},
+		{"id":"8d6a99e8b425f860","fromNode":"38faa9bbe3c96168","fromSide":"bottom","toNode":"5361d8fc5b60dbf5","toSide":"top","color":"4"},
+		{"id":"6099690fe0a37f18","fromNode":"e850476b3c29b92b","fromSide":"bottom","toNode":"5c42ce247d9c5a4d","toSide":"top","color":"4"},
+		{"id":"8bd5c78467d8c68f","fromNode":"e850476b3c29b92b","fromSide":"bottom","toNode":"26f15c87aa97569f","toSide":"top","color":"6"},
+		{"id":"8773d109f4c59997","fromNode":"38faa9bbe3c96168","fromSide":"bottom","toNode":"26f15c87aa97569f","toSide":"top","color":"6"},
+		{"id":"3f6546e68d67f2f2","fromNode":"588a11b3838e5961","fromSide":"bottom","toNode":"c2bfed3164879ac4","toSide":"top","color":"1"},
+		{"id":"785e89be085d49e5","fromNode":"588a11b3838e5961","fromSide":"bottom","toNode":"4c7482e4b9826ddc","toSide":"top","color":"5"},
+		{"id":"eb76e296e50315d6","fromNode":"e850476b3c29b92b","fromSide":"bottom","toNode":"e8fc9b1cd180eb03","toSide":"top","color":"2"},
+		{"id":"9b160b0477a82f58","fromNode":"38faa9bbe3c96168","fromSide":"bottom","toNode":"e8fc9b1cd180eb03","toSide":"top","color":"2"}
+	]
+}
