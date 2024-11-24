@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Snippets.md",
+                "file": "Stuff/Schemes.md",
                 "mode": "preview",
                 "source": true
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Stuff/Snippets.md",
+                "file": "Stuff/Schemes.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Stuff/Snippets.md",
+                "file": "Stuff/Schemes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Stuff/Snippets.md"
+                "file": "Stuff/Schemes.md"
               }
             }
           },
@@ -167,8 +167,9 @@
   },
   "active": "a492c53ded197380",
   "lastOpenFiles": [
-    "Snippets/Linux.md",
+    "Raw/Media/linux_cgroup_v2.jpeg",
     "Stuff/Snippets.md",
+    "Snippets/Linux.md",
     "Stuff/Goods.md",
     "Stuff/Articles.md",
     "Stuff/kubectl.md",
@@ -203,7 +204,6 @@
     "Raw/Media/Resources/6ac33093f10369a7acbf5a469a9b9b56_MD5.png",
     "Raw/Media/Resources/3db1a2ac19f65392dc704daa8825cc0b_MD5.png",
     "Raw/Media/Resources/f02ae05cda516e1c1148a249555d7b66_MD5.png",
-    "Stuff/k8s/Overview.md",
     "Work",
     "Stuff/k8s/graphs/kubelet.canvas",
     "Stuff/k8s/graphs/networking.canvas",

@@ -89,3 +89,5 @@ diagram showing what a low-level (OCI) container runtime actually does under the
 ![[osi_model.jpeg]]
 ### Memory Types
 ![[memory_types.jpg]]
+### Linux Cgroup V2
+![[linux_cgroup_v2.jpeg]]

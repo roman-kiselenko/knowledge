@@ -24,8 +24,12 @@
   "unresolvedLinks": false,
   "recentFilesStore": [
     {
+      "filepath": "Stuff/Schemes.md",
+      "timestamp": 1732433517694
+    },
+    {
       "filepath": "Stuff/Snippets.md",
-      "timestamp": 1732432932045
+      "timestamp": 1732433515174
     },
     {
       "filepath": "Snippets/Linux.md",
@@ -38,10 +42,6 @@
     {
       "filepath": "Stuff/Articles.md",
       "timestamp": 1732432902288
-    },
-    {
-      "filepath": "Stuff/kubectl.md",
-      "timestamp": 1732432860333
     }
   ],
   "starredFileStore": [],
