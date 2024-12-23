@@ -1,6 +1,6 @@
 ## <mark style="background: #BBFABBA6;">Documentation</mark>
 
-* [ko: Easy Go Containers](https://ko.build/)
+* [Netfilter’s flowtable infrastructure](https://docs.kernel.org/networking/nf_flowtable.html)
 * [Unix-like pipelines for Go](https://labix.org/pipe)
 * [https://buildpacks.io/](https://buildpacks.io/)
 * [Container Object Storage Interface (COSI) driver on Kubernetes.](https://container-object-storage-interface.github.io/docs/write-driver/introduction)
@@ -19,6 +19,7 @@
 
 ## <mark style="background: #ADCCFFA6;">Tools</mark>
 
+* [VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.](https://github.com/qdm12/gluetun)
 * [EIZO MONITOR TEST](https://www.eizo.be/monitor-test/)
 * [Secure Password Generator](https://passwordsgenerator.net/)
 * [EMBA - The firmware security analyzer](https://github.com/e-m-b-a/emba)
@@ -30,6 +31,10 @@
 
 ## <mark style="background: #D2B3FFA6;">Kubernetes</mark>
 
+
+* [a Docker + Kubernetes network trouble-shooting swiss-army container](https://github.com/nicolaka/netshoot)
+* [This is a Helm plugin which map deprecated or removed Kubernetes APIs in a release to supported APIs](https://github.com/helm/helm-mapkubeapis)
+* [Docker image with tools like curl, wget, ping, nslookup, dig, psql etc.](https://github.com/arunvelsriram/utils)
 * [About An example of how to build a custom kubectl sidecar container](https://github.com/thockin/kubectl-sidecar)
 * [Deprecated API Migration Guide | Kubernetes](https://kubernetes.io/docs/reference/using-api/deprecation-guide/)
 * [Kubetools - Curated List of Kubernetes Tools](https://github.com/collabnix/kubetools)

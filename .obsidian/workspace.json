@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "87a79d9027e60deb",
+        "id": "413d4f66436d5ccc",
         "type": "tabs",
         "children": [
           {
-            "id": "a492c53ded197380",
+            "id": "d0ee82b1cd6f1161",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Schemes.md",
+                "file": "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
                 "mode": "preview",
                 "source": true
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.5
+    "width": 200
   },
   "right": {
     "id": "60fe3580cc0200ed",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Stuff/Schemes.md",
+                "file": "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Stuff/Schemes.md",
+                "file": "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Stuff/Schemes.md"
+                "file": "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md"
               }
             }
           },
@@ -165,45 +165,45 @@
       "obsidian-local-images-plus:Local Images Plus  0.15.7\r\nDownload media files": false
     }
   },
-  "active": "a492c53ded197380",
+  "active": "d0ee82b1cd6f1161",
   "lastOpenFiles": [
-    "Raw/Media/linux_cgroup_v2.jpeg",
-    "Stuff/Snippets.md",
-    "Snippets/Linux.md",
-    "Stuff/Goods.md",
     "Stuff/Articles.md",
+    "Raw/Notes/How to monitor Containerd.md",
+    "Raw/Media/Resources/f5ef3a6953a6db8b35ae5ac759cac819_MD5.png",
+    "Raw/Media/Resources/3e4af1ff62ead2bb83abceaa99326010_MD5.png",
+    "Raw/Media/Resources/2a4937974270b08d1e0fc75718a19b6b_MD5.png",
+    "Raw/Media/Resources/e44509dc7c9e6fd4832228c8c2d6cfb1_MD5.png",
+    "Raw/Media/Resources/6d90a49efa3af8cdcd482cd5736a65f0_MD5.png",
+    "Raw/Media/Resources/b10258af431ffaea9cfe86c9ac145682_MD5.png",
+    "Raw/Media/Resources/bb680ba0d43df331168ae7f50e4d88c5_MD5.png",
+    "Raw/Media/Resources/b2b398670c244480d90553385203f59a_MD5.png",
+    "Raw/Notes/How to add Kubernetes-powered leader election to your Go apps.md",
+    "Raw/Notes/PodDisruptionBudgets Situations Where They Are Respected and Ignored in Kubernetes.md",
+    "Raw/Media/Resources/a48952fdd1beb142fa45876d3760b854_MD5.png",
+    "Raw/Media/Resources/5ee0ce3d80e69cd0bcc76d07e810a864_MD5.png",
+    "Raw/Notes/Understanding Kubernetes Ingress Deep dive in the real load balancer + Minikube Demo.md",
+    "Raw/Notes/Tracing Kubernetes Services.md",
+    "Raw/Notes/Kubernetes and its clusterDomain setting.md",
+    "Stuff/Goods.md",
+    "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
+    "Stuff/Snippets.md",
+    "Raw/Notes/Kubernetes Services  Achieving optimal performance is elusive 1.md",
     "Stuff/kubectl.md",
+    "Clippings/Kubernetes Services  Achieving optimal performance is elusive.md",
+    "Clippings",
+    "Stuff/Schemes.md",
+    "README.md",
+    "Stuff/Notes.md",
+    "Raw/Notes/Kubernetes Services  Achieving optimal performance is elusive.md",
+    "Raw/Notes/Comparing k8s Load Balancers.md",
+    "Snippets/Linux.md",
     "Snippets/Darwin/macos.md",
     "Snippets/Darwin/dnsmasq.md",
     "Snippets/Containers.md",
     "Snippets/Common.md",
-    "Stuff/Notes.md",
-    "Stuff/Schemes.md",
     "CV/CV.pdf",
     "Raw/Notes/Tracing the path of network traffic in Kubernetes.md",
     "Raw/Notes/Kubernetes Pod IP Conflict.md",
-    "Raw/Notes/Kubernetes in Kubernetes with vcluster.md",
-    "Raw/Notes/How to traceroute Kubernetes pod-to-pod traffic.md",
-    "Raw/Notes/Cilium for Kubernetes networking Why we use it and why we love it.md",
-    "Stuff/k8s/CNI/calico.md",
-    "CV/CV.md",
-    "CV/Job.md",
-    "Raw/Media/memory_types.jpg",
-    "Raw/Notes/Comparing k8s Load Balancers.md",
-    "CV/Prepare/Golang.md",
-    "CV/Prepare/Tech Interview.md",
-    "CV/Prepare/Common.md",
-    "Raw/Media/osi_model.jpeg",
-    "CV/Prepare/Soft Interview.md",
-    "Raw/Notes/Overlay Filesystem and Its Use in Container Runtime.md",
-    "Raw/Media/Resources/d4489489bced54e0fd542e2b43633da6_MD5.png",
-    "Raw/Media/Resources/f17c876924a68113735ae7c324f590d8_MD5.png",
-    "Raw/Media/Resources/81140953fef745542df6741e1138d34a_MD5.png",
-    "Raw/Media/Resources/ab3f0e4788bd9cf5a6794110d57736f9_MD5.png",
-    "Raw/Media/Resources/051653be673e8c8823603abb4d10f4d1_MD5.png",
-    "Raw/Media/Resources/6ac33093f10369a7acbf5a469a9b9b56_MD5.png",
-    "Raw/Media/Resources/3db1a2ac19f65392dc704daa8825cc0b_MD5.png",
-    "Raw/Media/Resources/f02ae05cda516e1c1148a249555d7b66_MD5.png",
     "Work",
     "Stuff/k8s/graphs/kubelet.canvas",
     "Stuff/k8s/graphs/networking.canvas",
@@ -214,7 +214,6 @@
     "Stuff/k8s/APIs",
     "Stuff/k8s/graphs",
     "Stuff/k8s/CNI",
-    "Stuff/k8s/CRI",
     "Stuff/k8s/CRI"
   ]
 }
