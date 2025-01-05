@@ -22,28 +22,7 @@
   "showShortcuts": true,
   "markdownOnly": false,
   "unresolvedLinks": false,
-  "recentFilesStore": [
-    {
-      "filepath": "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
-      "timestamp": 1734942837720
-    },
-    {
-      "filepath": "Stuff/Articles.md",
-      "timestamp": 1734942829066
-    },
-    {
-      "filepath": "Raw/Notes/How to monitor Containerd.md",
-      "timestamp": 1734942824454
-    },
-    {
-      "filepath": "Raw/Notes/How to add Kubernetes-powered leader election to your Go apps.md",
-      "timestamp": 1734942816008
-    },
-    {
-      "filepath": "Raw/Notes/PodDisruptionBudgets Situations Where They Are Respected and Ignored in Kubernetes.md",
-      "timestamp": 1734942801783
-    }
-  ],
+  "recentFilesStore": [],
   "starredFileStore": [],
   "searchDelay": 0,
   "replaceNewTabs": true,

@@ -11,12 +11,10 @@
             "id": "d0ee82b1cd6f1161",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
-                "mode": "preview",
-                "source": true
-              }
+              "type": "home-tab-view",
+              "state": {},
+              "icon": "search",
+              "title": "Home tab"
             }
           }
         ]
@@ -39,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "byCreatedTime"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -47,7 +47,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           },
           {
@@ -62,7 +64,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -70,7 +74,9 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ]
@@ -101,7 +107,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Cgroups - Deep Dive into Resource Management in Kubernetes"
             }
           },
           {
@@ -113,7 +121,9 @@
                 "file": "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Cgroups - Deep Dive into Resource Management in Kubernetes"
             }
           },
           {
@@ -124,7 +134,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -134,7 +146,9 @@
               "type": "outline",
               "state": {
                 "file": "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md"
-              }
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Cgroups - Deep Dive into Resource Management in Kubernetes"
             }
           },
           {
@@ -143,8 +157,12 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
-              }
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           }
         ]
@@ -156,17 +174,22 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-local-images-plus:Local Images Plus  0.15.7\r\nDownload media files": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": true,
       "templates:Insert template": true,
-      "command-palette:Open command palette": false,
-      "obsidian-local-images-plus:Local Images Plus  0.15.7\r\nDownload media files": false
+      "command-palette:Open command palette": false
     }
   },
   "active": "d0ee82b1cd6f1161",
   "lastOpenFiles": [
+    "Raw/Media/go-scheduler.jpg",
+    "Raw/Media/go-scheduler-2.jpg",
+    "Stuff/Snippets.md",
+    "Stuff/Notes.md",
+    "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
     "Stuff/Articles.md",
     "Raw/Notes/How to monitor Containerd.md",
     "Raw/Media/Resources/f5ef3a6953a6db8b35ae5ac759cac819_MD5.png",
@@ -180,20 +203,16 @@
     "Raw/Notes/How to add Kubernetes-powered leader election to your Go apps.md",
     "Raw/Notes/PodDisruptionBudgets Situations Where They Are Respected and Ignored in Kubernetes.md",
     "Raw/Media/Resources/a48952fdd1beb142fa45876d3760b854_MD5.png",
-    "Raw/Media/Resources/5ee0ce3d80e69cd0bcc76d07e810a864_MD5.png",
     "Raw/Notes/Understanding Kubernetes Ingress Deep dive in the real load balancer + Minikube Demo.md",
     "Raw/Notes/Tracing Kubernetes Services.md",
     "Raw/Notes/Kubernetes and its clusterDomain setting.md",
     "Stuff/Goods.md",
-    "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
-    "Stuff/Snippets.md",
     "Raw/Notes/Kubernetes Services  Achieving optimal performance is elusive 1.md",
     "Stuff/kubectl.md",
     "Clippings/Kubernetes Services  Achieving optimal performance is elusive.md",
     "Clippings",
     "Stuff/Schemes.md",
     "README.md",
-    "Stuff/Notes.md",
     "Raw/Notes/Kubernetes Services  Achieving optimal performance is elusive.md",
     "Raw/Notes/Comparing k8s Load Balancers.md",
     "Snippets/Linux.md",
