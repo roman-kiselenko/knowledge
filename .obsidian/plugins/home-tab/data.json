@@ -22,7 +22,16 @@
   "showShortcuts": true,
   "markdownOnly": false,
   "unresolvedLinks": false,
-  "recentFilesStore": [],
+  "recentFilesStore": [
+    {
+      "filepath": "Stuff/Articles.md",
+      "timestamp": 1736541665709
+    },
+    {
+      "filepath": "Raw/Notes/Exploring the basics of Istio traffic management.md",
+      "timestamp": 1736541633267
+    }
+  ],
   "starredFileStore": [],
   "searchDelay": 0,
   "replaceNewTabs": true,

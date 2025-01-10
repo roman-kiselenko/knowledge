@@ -11,10 +11,14 @@
             "id": "d0ee82b1cd6f1161",
             "type": "leaf",
             "state": {
-              "type": "home-tab-view",
-              "state": {},
-              "icon": "search",
-              "title": "Home tab"
+              "type": "markdown",
+              "state": {
+                "file": "Stuff/Articles.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Articles"
             }
           }
         ]
@@ -185,24 +189,25 @@
   },
   "active": "d0ee82b1cd6f1161",
   "lastOpenFiles": [
+    "Raw/Notes/Exploring the basics of Istio traffic management.md",
+    "Stuff/Articles.md",
+    "Raw/Media/Resources/ab8d88832b353d395819e185f7cef189_MD5.png",
+    "Raw/Media/Resources/6bccbfecb4003e2e0b3ea986e1d4205b_MD5.png",
+    "Raw/Media/Resources/61245df72a5ab3fca747da30eada8a8a_MD5.png",
+    "Raw/Media/Resources/bd7c63cd9f43c45184485f78b2147c60_MD5.png",
+    "Raw/Media/Resources/7974a2f957b8eecb4d5248addfa628cf_MD5.png",
+    "Raw/Media/Resources/48940d96d06e9822982a46f91ce1cc0e_MD5.png",
+    "Raw/Media/Resources/249f1328e71a13329d39e9071dda0f81_MD5.png",
+    "Raw/Notes/How to Choose Between Kubernetes Service Types ClusterIP, NodePort, and LoadBalancer.md",
     "Raw/Media/go-scheduler.jpg",
     "Raw/Media/go-scheduler-2.jpg",
     "Stuff/Snippets.md",
     "Stuff/Notes.md",
     "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
-    "Stuff/Articles.md",
     "Raw/Notes/How to monitor Containerd.md",
     "Raw/Media/Resources/f5ef3a6953a6db8b35ae5ac759cac819_MD5.png",
-    "Raw/Media/Resources/3e4af1ff62ead2bb83abceaa99326010_MD5.png",
-    "Raw/Media/Resources/2a4937974270b08d1e0fc75718a19b6b_MD5.png",
-    "Raw/Media/Resources/e44509dc7c9e6fd4832228c8c2d6cfb1_MD5.png",
-    "Raw/Media/Resources/6d90a49efa3af8cdcd482cd5736a65f0_MD5.png",
-    "Raw/Media/Resources/b10258af431ffaea9cfe86c9ac145682_MD5.png",
-    "Raw/Media/Resources/bb680ba0d43df331168ae7f50e4d88c5_MD5.png",
-    "Raw/Media/Resources/b2b398670c244480d90553385203f59a_MD5.png",
     "Raw/Notes/How to add Kubernetes-powered leader election to your Go apps.md",
     "Raw/Notes/PodDisruptionBudgets Situations Where They Are Respected and Ignored in Kubernetes.md",
-    "Raw/Media/Resources/a48952fdd1beb142fa45876d3760b854_MD5.png",
     "Raw/Notes/Understanding Kubernetes Ingress Deep dive in the real load balancer + Minikube Demo.md",
     "Raw/Notes/Tracing Kubernetes Services.md",
     "Raw/Notes/Kubernetes and its clusterDomain setting.md",
@@ -221,8 +226,6 @@
     "Snippets/Containers.md",
     "Snippets/Common.md",
     "CV/CV.pdf",
-    "Raw/Notes/Tracing the path of network traffic in Kubernetes.md",
-    "Raw/Notes/Kubernetes Pod IP Conflict.md",
     "Work",
     "Stuff/k8s/graphs/kubelet.canvas",
     "Stuff/k8s/graphs/networking.canvas",
