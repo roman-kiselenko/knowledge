@@ -24,12 +24,24 @@
   "unresolvedLinks": false,
   "recentFilesStore": [
     {
-      "filepath": "Stuff/Articles.md",
-      "timestamp": 1736541665709
+      "filepath": "Raw/Notes/Exploring the basics of Istio traffic management.md",
+      "timestamp": 1736670716557
     },
     {
-      "filepath": "Raw/Notes/Exploring the basics of Istio traffic management.md",
-      "timestamp": 1736541633267
+      "filepath": "Stuff/Articles.md",
+      "timestamp": 1736670714781
+    },
+    {
+      "filepath": "Raw/Notes/How to expose Kubernetes services using Istio API gateway from scratch?.md",
+      "timestamp": 1736670708273
+    },
+    {
+      "filepath": "Stuff/kubectl.md",
+      "timestamp": 1736670705903
+    },
+    {
+      "filepath": "Raw/Notes/Kubernetes Scheduling - The Complete Guide.md",
+      "timestamp": 1736670678122
     }
   ],
   "starredFileStore": [],
