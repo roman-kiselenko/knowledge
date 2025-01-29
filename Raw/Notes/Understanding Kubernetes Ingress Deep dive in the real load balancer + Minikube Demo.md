@@ -6,7 +6,7 @@ published:
 category: k8s
 tags:
   - network
-read: false
+read: true
 ---
 
 ![[Raw/Media/Resources/91407ca92826a3ade50ff4a79b7035b7_MD5.png]]

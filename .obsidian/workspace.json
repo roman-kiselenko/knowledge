@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Raw/Notes/Exploring the basics of Istio traffic management.md",
+                "file": "Stuff/Articles.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Exploring the basics of Istio traffic management"
+              "title": "Articles"
             }
           }
         ]
@@ -83,7 +83,8 @@
               "title": "Plugin no longer active"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -189,30 +190,31 @@
   },
   "active": "d0ee82b1cd6f1161",
   "lastOpenFiles": [
-    "Stuff/Articles.md",
     "Raw/Notes/How to expose Kubernetes services using Istio API gateway from scratch?.md",
+    "Stuff/Articles.md",
+    "Raw/Notes/Exploring the basics of Istio traffic management.md",
+    "Raw/Notes/Understanding Kubernetes Ingress Deep dive in the real load balancer + Minikube Demo.md",
+    "Raw/Notes/How to Choose Between Kubernetes Service Types ClusterIP, NodePort, and LoadBalancer.md",
+    "Raw/Notes/Kubernetes Scheduling - The Complete Guide.md",
+    "Raw/Notes/Kubernetes in Kubernetes with vcluster.md",
     "Raw/Media/Resources/76fe807a1cbfe661aea086b94f114b74_MD5.png",
     "Stuff/kubectl.md",
-    "Raw/Notes/Kubernetes Scheduling - The Complete Guide.md",
     "Raw/Media/Resources/f498385f34bf2ae4e824988e9d83383b_MD5.jpg",
     "Raw/Media/Resources/c6796345f541f4019b3f675b48ef6070_MD5.jpg",
     "Raw/Media/Resources/bc8106d7ec5e7aeb79b9d493f26a7056_MD5.jpg",
     "Raw/Notes/Kubernetes-Native Synthetic Monitoring with Kuberhealthy.md",
     "Stuff/Snippets.md",
-    "Raw/Notes/Exploring the basics of Istio traffic management.md",
     "Raw/Media/Resources/ab8d88832b353d395819e185f7cef189_MD5.png",
     "Raw/Media/Resources/6bccbfecb4003e2e0b3ea986e1d4205b_MD5.png",
     "Raw/Media/Resources/61245df72a5ab3fca747da30eada8a8a_MD5.png",
     "Raw/Media/Resources/bd7c63cd9f43c45184485f78b2147c60_MD5.png",
     "Raw/Media/Resources/7974a2f957b8eecb4d5248addfa628cf_MD5.png",
     "Raw/Media/Resources/48940d96d06e9822982a46f91ce1cc0e_MD5.png",
-    "Raw/Notes/How to Choose Between Kubernetes Service Types ClusterIP, NodePort, and LoadBalancer.md",
     "Stuff/Notes.md",
     "Raw/Notes/Cgroups - Deep Dive into Resource Management in Kubernetes.md",
     "Raw/Notes/How to monitor Containerd.md",
     "Raw/Notes/How to add Kubernetes-powered leader election to your Go apps.md",
     "Raw/Notes/PodDisruptionBudgets Situations Where They Are Respected and Ignored in Kubernetes.md",
-    "Raw/Notes/Understanding Kubernetes Ingress Deep dive in the real load balancer + Minikube Demo.md",
     "Raw/Notes/Tracing Kubernetes Services.md",
     "Raw/Notes/Kubernetes and its clusterDomain setting.md",
     "Stuff/Goods.md",

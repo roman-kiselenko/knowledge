@@ -6,7 +6,7 @@ published:
 category: k8s
 tags:
   - network
-read: false
+read: true
 ---
 
 When working with Kubernetes Services, choosing the appropriate type — **LoadBalancer**, **NodePort**, or **ClusterIP** — depends on your use case and how you want to expose your application to the world or your cluster. Let’s break down the different service types and explain when you should use each one:

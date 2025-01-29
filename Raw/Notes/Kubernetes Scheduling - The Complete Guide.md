@@ -6,7 +6,7 @@ published: 2024-08-29
 category: k8s
 tags:
   - containers
-read: false
+read: true
 ---
 
 If you’re involved in the cloud native ecosystem, chances are you’re already familiar with [Kubernetes](https://kubernetes.io/) — the open source system for automating deployment, scaling, and management of containerized applications.
