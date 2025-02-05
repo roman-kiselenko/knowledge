@@ -6,7 +6,7 @@ published:
 category: k8s
 tags:
   - network
-read: false
+read: true
 ---
 
 Kubernetes in Docker (KIND) is an open-source project maintained within the Kubernetes SIG community. The purpose of this project is to provide a simple Kubernetes environment using Docker, primarily for Kubernetes CI testing.

@@ -23,18 +23,22 @@ Here is a quick description of the environment:
 
 Before we can dig into the guts of a service, we need a workload and service. The simple [Podinfo](https://github.com/stefanprodan/podinfo) web app will be used for this purpose.
 
-  
+```
 $ helm repo add podinfo https://stefanprodan.github.io/podinfo  
 "podinfo" already exists with the same configuration, skipping
+```
 
   
+```
 $ helm repo update  
 Hang tight while we grab the latest from your chart repositories...  
 ...Successfully got an update from the "podinfo" chart repository  
 ...Successfully got an update from the "haproxytech" chart repository  
 Update Complete. ⎈Happy Helming!⎈
+```
 
   
+```
 $ helm upgrade -i --install --wait frontend --namespace podinfo \\  
 \--set replicaCount=2 \\  
 \--set backend=http://backend-podinfo:9898/echo \\  
@@ -49,6 +53,7 @@ NOTES:
 1\. Get the application URL by running these commands:  
   echo "Visit http://127.0.0.1:8080 to use your application"  
   kubectl -n podinfo port-forward deploy/frontend-podinfo 8080:9898
+```
 
 Let’s see where this workload got scheduled:
 

@@ -7,7 +7,7 @@ category: k8s
 tags:
   - k8s
   - openshift
-read: false
+read: true
 ---
 
 Debugging operators can be tricky, especially if the operator needs to be debugged on a live cluster, which is useful for developing [Red Hat OpenShift](https://developers.redhat.com/products/openshift/overview) cluster operators. Remotely running delve debugger inside the [container](https://developers.redhat.com/topics/containers) helps in this case. This article is about debugging operators live in an OpenShift cluster on the fly by rebuilding the operator container image and using `go dlv` remotely through the `oc` port-forward.
