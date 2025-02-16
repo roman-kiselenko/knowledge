@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Articles.md",
+                "file": "Raw/Notes/Calico CNI and its networking mode.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Articles"
+              "title": "Calico CNI and its networking mode"
             }
           }
         ]
@@ -190,19 +190,21 @@
   },
   "active": "d0ee82b1cd6f1161",
   "lastOpenFiles": [
-    "Raw/Notes/Calico Routing Modes.md",
-    "Raw/Media/Resources/e824e696dc807d4d5aa823b7cdbfefb5_MD5.png",
-    "Raw/Media/Resources/0ca7269b7ed62234abcf390961e6f054_MD5.png",
-    "Raw/Media/Resources/a8f2803cf2a08d3528762478b3e2c2b5_MD5.png",
-    "Raw/Media/Resources/e6b84c38aa30746203ead36938d0a936_MD5.png",
-    "Raw/Media/Resources/cb5954eca060b177118a211a88c87b05_MD5.png",
-    "Raw/Media/Resources/caba5159b99b058cf83ae7995615f0d4_MD5.png",
-    "Raw/Media/Resources/87a7aca8de593a5d4d2505e9190db2dd_MD5.png",
-    "Raw/Media/Resources/6dc07ad9d3e520fc9f78a2f0148abbf9_MD5.png",
-    "Raw/Media/Resources/7eb4881e8152c9315dda1dcb73fef1fe_MD5.png",
-    "Raw/Media/Resources/4954a9ac0d4058d88edc17439216a8c9_MD5.jpg",
-    "Raw/Notes/Deep dive into Kubernetes network model and communication.md",
+    "Raw/Media/Resources/daaaac9db3274f945ee0295639ecfcb7_MD5.png",
+    "Raw/Media/Resources/7339359dbda43ed51229eac3180c9cdf_MD5.png",
+    "Raw/Media/Resources/13793ab41d1ce0741821a538c78c950b_MD5.png",
+    "Raw/Media/Resources/3947e235cadc21781c66b4d74914089a_MD5.png",
+    "Raw/Media/Resources/443e96367aa64d55c2af02f9c69568c9_MD5.png",
+    "Raw/Media/Resources/08994da272bcba783157a98311b98ba7_MD5.png",
+    "Raw/Media/Resources/cdb4b6b725e2c338f3f291b4b7b15add_MD5.png",
+    "Raw/Media/Resources/47542aecd69b422ce93e934d31cb03f9_MD5.png",
+    "Raw/Media/Resources/99b53ec8f77fb99885519fdf3c962f32_MD5.png",
+    "Raw/Media/Resources/f8c5bd0abbb6e7dd5c6b13ce110f375e_MD5.png",
+    "Raw/Media/Resources/2ae2a6c92e03807387dcb6945c920c9a_MD5.png",
     "Stuff/Articles.md",
+    "Raw/Notes/Calico CNI and its networking mode.md",
+    "Raw/Notes/Calico Routing Modes.md",
+    "Raw/Notes/Deep dive into Kubernetes network model and communication.md",
     "Raw/Notes/Exploring the basics of Istio traffic management.md",
     "Raw/Notes/Kubernetes LoadBalance service using Cilium BGP control plane.md",
     "Snippets/Common.md",
@@ -224,7 +226,6 @@
     "Raw/Notes/How to debug OpenShift operators on a live cluster using dlv.md",
     "Raw/Notes/The Kubernetes dynamic client.md",
     "Raw/Notes/How to traceroute Kubernetes pod-to-pod traffic.md",
-    "Raw/Notes/How to Optimize I-O Intensive Containers on Kubernetes.md",
     "Clippings",
     "CV/CV.pdf",
     "Work",
