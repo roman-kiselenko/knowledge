@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Raw/Notes/Calico CNI and its networking mode.md",
+                "file": "Raw/Notes/eBPF and Cillum CNI.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Calico CNI and its networking mode"
+              "title": "eBPF and Cillum CNI"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "60fe3580cc0200ed",
@@ -190,19 +191,20 @@
   },
   "active": "d0ee82b1cd6f1161",
   "lastOpenFiles": [
-    "Raw/Media/Resources/daaaac9db3274f945ee0295639ecfcb7_MD5.png",
-    "Raw/Media/Resources/7339359dbda43ed51229eac3180c9cdf_MD5.png",
-    "Raw/Media/Resources/13793ab41d1ce0741821a538c78c950b_MD5.png",
-    "Raw/Media/Resources/3947e235cadc21781c66b4d74914089a_MD5.png",
-    "Raw/Media/Resources/443e96367aa64d55c2af02f9c69568c9_MD5.png",
-    "Raw/Media/Resources/08994da272bcba783157a98311b98ba7_MD5.png",
-    "Raw/Media/Resources/cdb4b6b725e2c338f3f291b4b7b15add_MD5.png",
-    "Raw/Media/Resources/47542aecd69b422ce93e934d31cb03f9_MD5.png",
-    "Raw/Media/Resources/99b53ec8f77fb99885519fdf3c962f32_MD5.png",
-    "Raw/Media/Resources/f8c5bd0abbb6e7dd5c6b13ce110f375e_MD5.png",
-    "Raw/Media/Resources/2ae2a6c92e03807387dcb6945c920c9a_MD5.png",
-    "Stuff/Articles.md",
+    "Raw/Media/Resources/da271af383015eb91df6c551c3ba0da6_MD5.png",
+    "Raw/Media/Resources/a02ed8c24e468e2fad1487b01622607e_MD5.png",
+    "Raw/Media/Resources/1d9b2dbaed38f27d0cb11dfbae141d29_MD5.png",
+    "Raw/Media/Resources/764111b2437bae12c1166df1483d2600_MD5.png",
+    "Raw/Media/Resources/2f830e65605d8559473eb60f3b1c47f2_MD5.png",
+    "Raw/Media/Resources/e51cec174a9a984dfa52b5880f021b05_MD5.png",
+    "Raw/Media/Resources/6a76123929bec9efba23097859f0ce2a_MD5.png",
+    "Raw/Media/Resources/54ca4398cbf292468db40bce5d449f4b_MD5.png",
+    "Raw/Media/Resources/58193a0b35b4b6ee2e154e2f3bc9d10b_MD5.png",
+    "Raw/Media/Resources/e8e202ee441576c5859f9b3c6fb92483_MD5.png",
+    "Raw/Media/Resources/f11bd9008d3482014defc4d481ea34de_MD5.png",
     "Raw/Notes/Calico CNI and its networking mode.md",
+    "Raw/Notes/eBPF and Cillum CNI.md",
+    "Stuff/Articles.md",
     "Raw/Notes/Calico Routing Modes.md",
     "Raw/Notes/Deep dive into Kubernetes network model and communication.md",
     "Raw/Notes/Exploring the basics of Istio traffic management.md",
@@ -225,7 +227,6 @@
     "Raw/Notes/Kubernetes in Kubernetes with vcluster.md",
     "Raw/Notes/How to debug OpenShift operators on a live cluster using dlv.md",
     "Raw/Notes/The Kubernetes dynamic client.md",
-    "Raw/Notes/How to traceroute Kubernetes pod-to-pod traffic.md",
     "Clippings",
     "CV/CV.pdf",
     "Work",

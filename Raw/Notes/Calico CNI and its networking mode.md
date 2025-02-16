@@ -54,6 +54,7 @@ The instructions begin with setting up a Kubernetes cluster using AWS CloudForma
 
 ![[Raw/Media/Resources/c3502efb89d5a1fb41272da8fe26e46b_MD5.png]]
 
+```
 curl -O https://s3.ap-northeast-2.amazonaws.com/cloudformation.cloudneta.net/kans/kans-3w.yaml
 
 aws cloudformation deploy --template-file kans-3w.yaml --stack-name mylab --parameter-overrides KeyName=kp-gasida SgIngressSshCidr=$(curl -s ipinfo.io/ip)/32 --region ap-northeast-2
@@ -72,12 +73,15 @@ done
 
 ssh -i ~/.ssh/kp-test.pem ubuntu@$(aws cloudformation describe-stacks --stack-name mylab --query 'Stacks\[\*\].Outputs\[0\].OutputValue' --output text --region ap-northeast-2)
 
+```
+
 Before installing Calico, the network configuration is minimal:
 
 -   The `ip addr` output shows only the loopback (lo) and the primary network interface (ens5).
 -   IPTables rules are relatively simple, with basic Kubernetes-related chains but no CNI-specific rules.
 -   There are 50 filter table rules and 48 NAT table rules.
 
+```
 (⎈|kubernetes\-admin@kubernetes:default) root@k8s\-m:~\# ip \-c addr  
 1: lo: <LOOPBACK,UP,LOWER\_UP\> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000  
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00  
@@ -203,6 +207,9 @@ KUBE\-SEP\-FKILGDVKESVSEHEB  all
 (⎈|kubernetes\-admin@kubernetes:default) root@k8s\-m:~\# iptables \-t filter \-L | wc \-l  
 50
 
+
+```
+
 Calico is installed using a custom YAML file.
 
 -   Calico daemon sets for each node
@@ -267,6 +274,7 @@ Please note that it operates as a DaemonSet, ensuring it runs on every node
 -   It sets up the necessary networking components for inter-pod and inter-node communication
 -   The installation of Calico resolves the ‘Pending’ state of core components like CoreDNS.
 
+<collapse>
 (⎈|kubernetes-admin@kubernetes:default) root@k8s-m:~# kubectl get pod -A -owide  
 NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE     IP               NODE     NOMINATED NODE   READINESS GATES  
 kube-system   calico-kube-controllers-77d59654f4-xgt7f   1/1     Running   0          39s     172.16.158.2     k8s-w1   <none\>           <none\>  
@@ -284,6 +292,8 @@ kube-system   kube-proxy-jp6h8                           1/1     Running   0    
 kube-system   kube-proxy-mmk4s                           1/1     Running   0          5m5s    192.168.20.100   k8s-w0   <none\>           <none\>  
 kube-system   kube-proxy-mmxpz                           1/1     Running   0          5m7s    192.168.10.10    k8s-m    <none\>           <none\>  
 kube-system   kube-scheduler-k8s-m                       1/1     Running   0          5m21s   192.168.10.10    k8s-m    <none\>           <none\>
+
+</collapse>
 
 The Calico CNI is installed using a custom YAML file, and it contains all necessary components for Calico, including DaemonSets, ConfigMaps, and Custom Resource Definitions (CRDs). When creating new CRDs, then new virtual interfaces are created, including `tunl0` for IPIP tunneling; the `cali*` interfaces are created for each pod.
 

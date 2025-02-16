@@ -24,24 +24,12 @@
   "unresolvedLinks": false,
   "recentFilesStore": [
     {
+      "filepath": "Raw/Notes/eBPF and Cillum CNI.md",
+      "timestamp": 1739719718603
+    },
+    {
       "filepath": "Raw/Notes/Calico CNI and its networking mode.md",
-      "timestamp": 1739712098108
-    },
-    {
-      "filepath": "Stuff/Articles.md",
-      "timestamp": 1739711005486
-    },
-    {
-      "filepath": "Raw/Notes/Calico Routing Modes.md",
-      "timestamp": 1739710979005
-    },
-    {
-      "filepath": "Raw/Notes/Deep dive into Kubernetes network model and communication.md",
-      "timestamp": 1739710233482
-    },
-    {
-      "filepath": "Raw/Notes/Exploring the basics of Istio traffic management.md",
-      "timestamp": 1739710160288
+      "timestamp": 1739719718495
     }
   ],
   "starredFileStore": [],
