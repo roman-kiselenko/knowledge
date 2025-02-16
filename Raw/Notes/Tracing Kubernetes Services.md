@@ -3,7 +3,7 @@ title: Tracing Kubernetes Services
 source: https://itnext.io/tracing-kubernetes-services-4dc827abdc55
 clipped: 2024-12-23
 published: 
-category: k8s
+category: network
 tags:
   - network
 read: false

@@ -3,7 +3,7 @@ title: "Understanding kubernetes networking: services"
 source: https://medium.com/google-cloud/understanding-kubernetes-networking-services-f0cb48e4cc82
 clipped: 2025-02-05
 published: 
-category: k8s
+category: network
 tags:
   - network
 read: false

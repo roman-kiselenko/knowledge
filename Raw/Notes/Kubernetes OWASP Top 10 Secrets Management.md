@@ -24,7 +24,7 @@ Before I delve into the technical nuances of secrets in Kubernetes, there are so
 
 Kubernetes has a native Secret type, this allows for identification and separation of configurations that should be secret. It is simply a type, separated for the purpose of identification and requires that data stored in them are base64 encoded. Notice they are encoded **NOT** encrypted.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*qAqfdKzj47IV4ZQrBr5fDg.png)
+![[Raw/Notes/Raw/Media/Resources/0ab0dee0a91692d9506fc5a4af04c587_MD5.png]]
 
 Vew the etcd Kubernetes data store, by default these are not encrypted.
 
@@ -97,7 +97,7 @@ Notice how all the manually created secrets expose the secrets to the operator/d
 
 Automation is key to help ensure that secrets stay secret. Manual interaction introduces the risk of knowledge of secrets unnecessarily.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*BmTxt65CLU9bcWXGR6KMdw.png)
+![[Raw/Notes/Raw/Media/Resources/4dd327735296a78e1b5a430edc93b158_MD5.png]]
 
 Example flow of CI/CD pipeline
 
@@ -118,7 +118,7 @@ The Secrets Store CSI, is an extension of the Kubernetes API, which instruments 
 
 This approach allows for secrets to be accessed directly by workloads requiring access to them. The benefit of this is that Kubernetes secrets will only be generated while in use, so only exists for the duration of the workload requiring it in use.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*DMnYDwNY5obd1HsP7xYIUA.png)
+![[Raw/Notes/Raw/Media/Resources/d38508e956b56563de8394a92e84621a_MD5.png]]
 
 Secrets Store CSI connects to vault directly to provide secrets to pods
 

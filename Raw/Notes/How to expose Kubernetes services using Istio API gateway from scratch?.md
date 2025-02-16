@@ -3,7 +3,7 @@ title: How to expose Kubernetes services using Istio API gateway from scratch?
 source: https://medium.com/@joeri_verhavert/how-to-expose-kubernetes-services-using-istio-api-gateway-from-scratch-e5a8709afda4
 clipped: 2025-01-12
 published: 
-category: k8s
+category: network
 tags:
   - network
 read: false

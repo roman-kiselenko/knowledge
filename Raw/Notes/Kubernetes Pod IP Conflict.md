@@ -183,13 +183,13 @@ Next, let’s take a look at the flow of the CNI process using a diagram (a simp
 
 Initially, the Kubelet creates a sandbox for the Pod, at which point the Pod does not have any IP address.
 
-![](https://miro.medium.com/v2/resize:fit:898/0*C2mPeabVoJ9zSc3q.jpg)
+![[Raw/Notes/Raw/Media/Resources/7d34648b7e5e7e2fa22b8bf999f6298a_MD5.jpg]]
 
 The CNI is responsible for providing networking capabilities to the Pod, including IP address allocation. By default, the CNI configuration files are stored in /etc/cni/net.d.
 
 The Kubelet reads /etc/cni/net.d to determine which CNI is being used on the system.
 
-![](https://miro.medium.com/v2/resize:fit:898/0*qZ3PEuk-r2MvLCHA.jpg)
+![[Raw/Notes/Raw/Media/Resources/4b3421c30ae3d94f1b3a39ab4f319b38_MD5.jpg]]
 
 → docker exec kind-worker3 cat /etc/cni/net.d/10-kindnet.conflist
 
@@ -233,13 +233,13 @@ The example above shows the CNI configuration file used within KIND. Pay attenti
 
 Thus, when the Kubelet finds this configuration, it calls the “kind-net” CNI to handle the task. “kind-net” then utilizes “host-local” to handle the IP address allocation issue.
 
-![](https://miro.medium.com/v2/resize:fit:898/0*cVvajJbTENXbivxu.jpg)
+![[Raw/Notes/Raw/Media/Resources/2bed30dc67ec567c93af9f2f2ace9a09_MD5.jpg]]
 
 Call host-local IPAM to handle IP
 
 “host-local” uses the local file “/run/cni-ipam-state/kindnet” as its local database to track which IP addresses have been used. It searches for an available IP address from the database and returns the result to the “kind-net” CNI for further processing.
 
-![](https://miro.medium.com/v2/resize:fit:898/0*ZASyJpiH-nxkrOaa.jpg)
+![[Raw/Notes/Raw/Media/Resources/4547aaf6aaccb0089758e402eb453e4e_MD5.jpg]]
 
 host-local use local file as cache
 
@@ -271,7 +271,7 @@ We can see that this section records the current status of all CNIs in use. It�
 
 Once everything is complete, “kind-net” sets the relevant IP addresses on the Pods.
 
-![](https://miro.medium.com/v2/resize:fit:898/0*j1U-5awLG55qfxua.jpg)
+![[Raw/Notes/Raw/Media/Resources/97b9dc24722ada859bad6d19c43cc38e_MD5.jpg]]
 
 Assign IP to Pod
 

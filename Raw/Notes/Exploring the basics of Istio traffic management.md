@@ -3,7 +3,7 @@ title: Exploring the basics of Istio traffic management
 source: https://medium.com/@arivermar/exploring-the-basics-of-istio-traffic-management-cee13f0817c2
 clipped: 2025-01-10
 published: 
-category: k8s
+category: network
 tags:
   - network
 read: false

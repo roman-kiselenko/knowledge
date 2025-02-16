@@ -17,7 +17,7 @@ In our [most recent post](https://danielmangum.com/posts/k8s-asa-the-storage-int
 
 It is time to make things right! I promised we would be looking at caching extensively and the time has come to do so.
 
-![cover-image](https://danielmangum.com/static/k8s-asa-caching-0.png)
+![[Raw/Notes/Raw/Media/Resources/72a3c9f00d80542f5450f0bbac4a1906_MD5.png]]
 
 Table of Contents:
 
@@ -210,7 +210,7 @@ $ docker run --net=host --rm -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus
 
 The Prometheus dashboard should now be accessible in the browser at `127.0.0.1:9090`. We can get a graph of metrics `etcd` exposes by entering a query. For example, `irate(process_cpu_seconds_total{job="etcd"}[5m])` will show us the rate of increase of total system and user CPU time. If we now run our program that establishes watches on `ConfigMaps`, we shouldn’t see a meaningful impact on CPU.
 
-![k8s-asa-caching-1](https://danielmangum.com/static/k8s-asa-caching-1.png)
+![[Raw/Notes/Raw/Media/Resources/877c9307440af0dbb22d1a203fd74702_MD5.png]]
 
 > Y-axis range is `0.03` to `0.23`.
 
@@ -331,7 +331,7 @@ ADDED || default/testing
 
 Looking back at our `etcd` metrics, we can see a significant spike in CPU at program startup. This is concerning, but perhaps even more troublesome is the amount of work incurred when we created a new `ConfigMap`. While the load is simulated in our program, the Kubernetes API Server may service many watch requests from various clients. Establishing a watch in `etcd` for each is unnecessary as the API Server only needs one notification in order to subsequently inform all clients.
 
-![k8s-asa-caching-2](https://danielmangum.com/static/k8s-asa-caching-2.png)
+![[Raw/Notes/Raw/Media/Resources/80a6fc8c68cba40cef40e83153a019d1_MD5.png]]
 
 > Y-axis range is `0.00` to `3.00`.
 
@@ -549,7 +549,7 @@ The majority of the functionality is invoked from its [`ListAndWatch()` method](
 
 ### Tying It All Together [Link to heading](#tying-it-all-together)
 
-![k8s-asa-caching-4](https://danielmangum.com/static/k8s-asa-caching-4.png)
+![[Raw/Notes/Raw/Media/Resources/296702e9a229cd343902af822b36410b_MD5.png]]
 
 With all components in place, we need to [fire up the `Reflector` to start pulling data from `cacherListerWatcher`](https://github.com/kubernetes/kubernetes/blob/e818649c10f29bc80b874889a448da4023918330/staging/src/k8s.io/apiserver/pkg/storage/cacher/cacher.go#L406) and storing it in the `watchCache`, which will inform the `Cacher` of updates.
 
@@ -865,7 +865,7 @@ ADDED || default/testing2
 ...
 ```
 
-![k8s-asa-caching-3](https://danielmangum.com/static/k8s-asa-caching-3.png)
+![[Raw/Notes/Raw/Media/Resources/bb36cce508b1b2483b3ea1bd76cfe115_MD5.png]]
 
 > Y-axis range is `0.00` to `0.18`.
 

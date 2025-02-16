@@ -72,7 +72,7 @@ The diagram below illustrates this scenario:
 
 Point-to-site scenario (Endpoint A to Site B)
 
-![WireGuard point-to-site scenario](https://www.procustodibus.com/images/blog/wireguard-topologies/point-to-site-complex.svg)
+![[Raw/Notes/Raw/Media/Resources/b86e2e48564db54cd86e9a232e28be21_MD5.svg]]
 
 The configuration for this scenario is explained in the [Point to Site Configuration](https://www.procustodibus.com/blog/2020/11/wireguard-point-to-site-config/) article. These are the WireGuard configuration settings we’d use for Endpoint A:
 
@@ -809,7 +809,7 @@ To wrap up, here’s a diagram of the complete round trip of the SYN packet and 
 
 WireGuard packet round trip
 
-![WireGuard packet flow](https://www.procustodibus.com/images/blog/endpoints/wireguard-packet-flow.svg)
+![[Raw/Notes/Raw/Media/Resources/77c788730841203400ad29468793bd08_MD5.svg]]
 
 And the combined steps in a single table:
 

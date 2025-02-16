@@ -3,7 +3,7 @@ title: Calico Routing Modes
 source: https://joshrosso.com/c/calico-routing-modes/
 clipped: 2025-02-16
 published: 
-category: k8s
+category: network
 tags:
   - network
 read: false

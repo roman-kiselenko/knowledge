@@ -31,7 +31,7 @@ Starting in v1.19, whenever a request is made to a deprecated REST API, a warnin
 
 Because the warning originates at the server, and is intercepted at the client level, it works for all kubectl commands, including high-level commands like `kubectl apply`, and low-level commands like `kubectl get --raw`:
 
-![kubectl applying a manifest file, then displaying a warning message 'networking.k8s.io/v1beta1 Ingress is deprecated in v1.19+, unavailable in v1.22+; use networking.k8s.io/v1 Ingress'.](https://kubernetes.io/blog/2020/09/03/warnings/kubectl-warnings.png)
+![[Raw/Notes/Raw/Media/Resources/489b9bdd960735bc6cf5078e014ee291_MD5.png]]
 
 This helps people affected by the deprecation to know the request they are making is deprecated, how long they have to address the issue, and what API they should use instead. This is especially helpful when the user is applying a manifest they didn't create, so they have time to reach out to the authors to ask for an updated version.
 
@@ -264,7 +264,7 @@ func getClientWithoutWarnings(config *rest.Config) (kubernetes.Interface, error)
 
 If you want to be sure you notice deprecations as soon as possible and get a jump start on addressing them, `kubectl` added a `--warnings-as-errors` option in v1.19. When invoked with this option, `kubectl` treats any warnings it receives from the server as errors and exits with a non-zero exit code:
 
-![kubectl applying a manifest file with a --warnings-as-errors flag, displaying a warning message and exiting with a non-zero exit code.](https://kubernetes.io/blog/2020/09/03/warnings/kubectl-warnings-as-errors.png)
+![[Raw/Notes/Raw/Media/Resources/1a462894bbb8b7f2f94b58bef527b611_MD5.png]]
 
 This could be used in a CI job to apply manifests to a current server, and required to pass with a zero exit code in order for the CI job to succeed.
 

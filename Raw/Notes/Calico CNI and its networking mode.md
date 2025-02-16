@@ -3,7 +3,7 @@ title: Calico CNI and its networking mode
 source: https://sigridjin.medium.com/calico-cni-and-its-networking-mode-ff71c7bdf65b
 clipped: 2025-02-16
 published: 
-category: k8s
+category: network
 tags:
   - network
 read: false
@@ -713,20 +713,20 @@ When two Pods are scheduled on the same node, they can communicate directly with
 
 To test intra-node communication, we’ll deploy two Pods on the same node by specifying the `nodeName` field in their configurations. Here are the YAML configurations for `pod1` and `pod2.`
 
+```yaml
 apiVersion: v1  
 kind: Pod  
 metadata:  
   name: pod1  
 spec:  
   nodeName: k8s-w1  
-
   containers:  
-  \- name: pod1  
+  - name: pod1  
     image: nicolaka/netshoot    
     command: \["tail"\]  
     args: \["-f", "/dev/null"\]  
   terminationGracePeriodSeconds: 0  
-\---  
+---  
 apiVersion: v1  
 kind: Pod  
 metadata:  
@@ -734,19 +734,21 @@ metadata:
 spec:  
   nodeName: k8s-w1  
   containers:  
-  \- name: pod2  
+  - name: pod2  
     image: nicolaka/netshoot  
     command: \["tail"\]  
     args: \["-f", "/dev/null"\]  
   terminationGracePeriodSeconds: 0
+```
 
+```sh
 curl \-s \-O https:
 
 (⎈|kubernetes-admin@kubernetes:default) root@k8s-m:~# curl \-s \-O https:  
 (⎈|kubernetes-admin@kubernetes:default) root@k8s-m:~# kubectl apply \-f node1-pod2.yaml  
 pod/pod1 created  
 pod/pod2 created
-
+```
 ![[Raw/Media/Resources/99b53ec8f77fb99885519fdf3c962f32_MD5.png]]
 
 [https://namejsjeongkr.tistory.com/5](https://namejsjeongkr.tistory.com/5) [https://mokpolar.tistory.com/64](https://mokpolar.tistory.com/64)
@@ -758,6 +760,7 @@ After deploying the Pods, you may notice changes in the node’s network interfa
 -   New `cali*` Interfaces: Calico creates new network interfaces (e.g., `cali1234567890`) for each Pod.
 -   Routing Table Entries: Two new routing table entries are added, routing traffic to the Pods’ IP addresses via the respective `cali*` interfaces.
 
+```sh
 root@k8s-w1:~# ip -c link  
 1: lo: <LOOPBACK,UP,LOWER\_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000  
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00  
@@ -776,7 +779,9 @@ root@k8s-w1:~# ip -c link
     link/ether ee:ee:ee:ee:ee:ee brd ff:ff:ff:ff:ff:ff link-netns cni-a37fb783-52ac-b62e-8350\-ee7d7097cf73  
 10: calibd2348b4f67@if3: <BROADCAST,MULTICAST,UP,LOWER\_UP> mtu 8981 qdisc noqueue state UP mode DEFAULT group default qlen 1000  
     link/ether ee:ee:ee:ee:ee:ee brd ff:ff:ff:ff:ff:ff link-netns cni-c744e9a9-de5d-377f-54b4-1c8ee5b50459
+```
 
+```sh
 root@k8s-w1:~  
 default via 192.168.10.1 dev ens5 proto dhcp src 192.168.10.101 metric 100  
 172.16.34.0/24 via 192.168.20.100 dev tunl0 proto bird onlink  
@@ -791,9 +796,10 @@ blackhole 172.16.158.0/24 proto bird
 192.168.0.2 via 192.168.10.1 dev ens5 proto dhcp src 192.168.10.101 metric 100  
 192.168.10.0/24 dev ens5 proto kernel scope link src 192.168.10.101 metric 100  
 192.168.10.1 dev ens5 proto dhcp scope link src 192.168.10.101 metric 100
+```
 
 The Pod has a default route via `169.254.1.1`, which is a virtual router provided by Calico for intra-node communication.
-
+```sh
 \# 네트워크 인터페이스 정보 확인 : calice#~ 2개 추가됨!  
 \# 각각 net ns(네임스페이스) 0, 1로 호스트와 구별됨
 
@@ -829,7 +835,7 @@ PING 172.16.158.4 (172.16.158.4) 56(84) bytes of data.
 \--- 172.16.158.4 ping statistics ---  
 6 packets transmitted, 6 received, 0% packet loss, time 5123ms  
 rtt min/avg/max/mdev = 0.019/0.027/0.033/0.004 ms
-
+```
 ## Testing Connectivity to the Other Pod
 
 From `pod1`, ping `pod2` using its IP address (e.g., `172.16.158.4`): The successful ping confirms that Pods on the same node can communicate directly.
@@ -840,6 +846,7 @@ Understanding the Pod IP Address:
 -   It belongs to the `172.16.158.0/24` subnet assigned by Calico.
 -   The low latency indicates that the Pods are on the same node.
 
+```sh
 root@k8s-w1:~# tcpdump -i $VETH1 -nnip addr show  
 tcpdump: \-nnip: No such device exists  
 (SIOCGIFHWADDR: No such device)  
@@ -882,9 +889,10 @@ root@k8s-w1:~# ip addr show
     inet6 fe80::ecee:eeff:feee:eeee/64 scope link  
        valid\_lft forever preferred\_lft forever  
 root@k8s-w1:~#
-
+```
 To observe the network traffic between the Pods, we can use `tcpdump` on the host. On the node, list the network interfaces and identify the `cali*` interface corresponding to `pod1` or `pod2`. You can use `tcpdump` to capture network packets and observe the communication between the Pods.
 
+```sh
 root@k8s-w1:~# tcpdump \-i cali1429ee5e74b \-nn  
 tcpdump: verbose output suppressed, use \-v\[v\]... for full protocol decode  
 listening on cali1429ee5e74b, link-type EN10MB (Ethernet), snapshot length 262144 bytes  
@@ -908,6 +916,7 @@ listening on cali1429ee5e74b, link-type EN10MB (Ethernet), snapshot length 26214
 02:16:36.789377 IP 172.16.158.1.8080 > 192.168.10.101.32948: Flags \[.\], ack 112, win 488, options \[nop,nop,TS val 3214329546 ecr 2096407018\], length 0  
 02:16:36.789595 IP 192.168.10.101.42932 > 172.16.158.1.8181: Flags \[F.\], seq 110, ack 139, win 488, options \[nop,nop,TS val 2096407018 ecr 3214329546\], length 0  
 02:16:36.789607 IP 172.16.158.1.8181 > 192.168.10.101.42932: Flags \[.\], ack 111, win 488, options \[nop,nop,TS val 3214329546 ecr 2096407018\], length 0
+```
 
 **Source and Destination IPs:**
 
@@ -944,6 +953,7 @@ When a Pod communicates with an external internet resource, the traffic is NAT�
 -   IPTables MASQUERADE Rule: An IPTables `MASQUERADE` rule is applied, which replaces the source IP of the Pod with the node's IP when traffic exits the node.
 -   No Tunnel Involvement: The tunnel interface is not involved in this communication.
 
+```sh
 (⎈|kubernetes\-admin@kubernetes:default) root@k8s\-m:~\# iptables \-n \-t nat   
 Chain cali\-nat\-outgoing (1 references)  
 target     prot opt source               destination  
@@ -959,9 +969,10 @@ pod/pod1 unchanged
 NAME   READY   STATUS    RESTARTS   AGE   IP             NODE     NOMINATED NODE   READINESS GATES  
 pod1   1/1     Running   0          16m   172.16.158.4   k8s\-w1   <none\>           <none\>  
 pod2   1/1     Running   0          16m   172.16.158.5   k8s\-w1   <none\>           <none\>
-
+```
 Enter the Pod’s shell and attempt to reach an external service, such as Google’s DNS server. You will observe that the source IP address is the node’s IP, not the Pod’s IP. This confirms that NAT is translating the Pod’s IP to the node’s IP for outbound traffic.
 
+```sh
 root@k8s-w1:~  
 Chain cali-nat-outgoing (1 references)  
  pkts bytes target     prot opt in     out     source               destination  
@@ -1055,6 +1066,7 @@ k8s\-w2   Ready    <none\>          33m   v1.30.5   192.168.10.102   <none\>    
 02:21:06.786147 IP 172.16.158.1.8080 \> 192.168.10.101.48680: Flags \[.\], ack 112, win 488, options \[nop,nop,TS val 3214599543 ecr 2096677015\], length 0  
 02:21:06.786246 IP 192.168.10.101.36582 \> 172.16.158.1.8181: Flags \[F.\], seq 110, ack 139, win 488, options \[nop,nop,TS val 2096677015 ecr 3214599543\], length 0  
 02:21:06.786255 IP 172.16.158.1.8181 \> 192.168.10.101.36582: Flags \[.\], ack 111, win 488, options \[nop,nop,TS val 3214599543 ecr 2096677015\], length 0
+```
 
 Calico offers several networking modes to accommodate various environments and requirements:
 
@@ -1104,6 +1116,7 @@ By default, Calico uses IP-in-IP (IPIP) encapsulation for cross-node pod communi
 
 First, check the current IPPool configuration: Here, `IPIPMODE` is set to `Always`, meaning IPIP encapsulation is always used. To switch to Direct mode, we need to change `IPIPMODE` to `Never.` On the node, check the routing table to see if the routes now use the physical interface (e.g., `ens5` or `enp0s8`) instead of the tunnel interface (`tunl0`).
 
+```sh
 (⎈|kubernetes\-admin@kubernetes:default) root@k8s\-m:~\# calicoctl get ippool \-o wide  
 NAME                  CIDR            NAT    IPIPMODE   VXLANMODE   DISABLED   DISABLEBGPEXPORT   SELECTOR  
 default\-ipv4\-ippool   172.16.0.0/16   true   Always     Never       false      false              all()
@@ -1119,9 +1132,11 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 
 (⎈|kubernetes\-admin@kubernetes:default) root@k8s\-m:~\# calicoctl get ippool default\-ipv4\-ippool \-o yaml | sed \-e "s/ipipMode: Always/ipipMode: Never/" | calicoctl apply \-f \-  
 Successfully applied 1 'IPPool' resource(s)
+```
 
 To switch to Direct mode, we need to change IPIPMODE to Never:
 
+```sh
 (⎈|kubernetes-admin@kubernetes:default) root@k8s-m:~# calicoctl get ippool -o wide  
 NAME                  CIDR            NAT    IPIPMODE   VXLANMODE   DISABLED   DISABLEBGPEXPORT   SELECTOR  
 default\-ipv4-ippool   172.16.0.0/16   true   Never      Never       false      false              all()
@@ -1135,9 +1150,10 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 172.16.116.0    192.168.10.10   255.255.255.0   UG    0      0        0 ens5  
 172.16.184.0    192.168.10.102  255.255.255.0   UG    0      0        0 ens5  
 192.168.0.2     192.168.10.1    255.255.255.255 UGH   100    0        0 ens5
-
+```
 Create a new pod to test communication, List the pods and their IP addresses. Use `calicoctl` to check the workload endpoints:
 
+```sh
 \# 파드 생성  
 curl \-s \-O https:  
 kubectl apply \-f node3-pod3.yaml
@@ -1152,8 +1168,6 @@ pod2       k8s-w1   172.16.158.5/32   calibd2348b4f67
 pod3       k8s-w0   172.16.34.1/32    cali49778cadcf1
 
 kubectl exec \-it pod1 \-- zsh
-
-  
   
  pod1  ~  ping 172.16.158.6  
 PING 172.16.158.6 (172.16.158.6) 56(84) bytes of data.  
@@ -1176,6 +1190,7 @@ PING 172.16.158.6 (172.16.158.6) 56(84) bytes of data.
 64 bytes from 172.16.158.6: icmp\_seq=17 ttl=64 time=0.030 ms  
 64 bytes from 172.16.158.6: icmp\_seq=18 ttl=64 time=0.031 ms  
 64 bytes from 172.16.158.6: icmp\_seq=19 ttl=64 time=0.030 ms
+```
 
 **Pods Involved:**
 
@@ -1187,11 +1202,11 @@ PING 172.16.158.6 (172.16.158.6) 56(84) bytes of data.
 -   Both Pods are running on the same node, `k8s-w1`.
 -   An attempt to capture ICMP packets on the node’s physical network interface `ens5` using `tcpdump` resulted in no packets being captured.
 -   Direct Communication: Since `pod1` and `pod2` are on the same node, their network traffic does not need to leave the node. The communication occurs internally, routed directly between the Pods without involving the node's physical network interface (`ens5`).
--   VEach Pod is connected to the node’s network stack via virtual Ethernet interfaces (veth pairs). The host side of these pairs are the `cali*` interfaces created by Calico (e.g., `calice0906292e2`, `calibd2348b4f67`).
+-   Each Pod is connected to the node’s network stack via virtual Ethernet interfaces (veth pairs). The host side of these pairs are the `cali*` interfaces created by Calico (e.g., `calice0906292e2`, `calibd2348b4f67`).
 -   The Linux kernel handles packet forwarding between these virtual interfaces internally. The traffic stays within the node’s network namespace, avoiding the overhead of external routing.
 
 On the node `k8s-w1`, try capturing ICMP packets on the physical interface. Since traffic between Pods on the same node doesn’t pass through the physical interface, you need alternative methods to capture and analyze it.
-
+```sh
 1\.  pod1  ~  ping 172.16.158.5  
 2\. (⎈|kubernetes-admin@kubernetes:default) root@k8s-m:~  
 NAME   READY   STATUS    RESTARTS   AGE   IP             NODE     NOMINATED NODE   READINESS GATES  
@@ -1229,9 +1244,11 @@ Warning: interface names might be incorrect
 02:56:35.450900 calibd2348b4f67 In  IP 172.16.158.5 > 172.16.158.6: ICMP echo reply, id 102, seq 8, length 64  
 02:56:35.450907 calice0906292e2 Out IP 172.16.158.5 > 172.16.158.6: ICMP echo reply, id 102, seq 8, length 64  
 02:56:36.474884 calice0906292e2 In  IP 172.16.158.6 > 172.16.158.5: ICMP echo request, id 102, seq 9, length 64
+```
 
 We have `pod1` running on `k8s-w1` with IP `172.16.158.6` and `pod3` running on `k8s-w0` with IP `172.16.34.1`. Test communication between Pods on different nodes to understand inter-node networking behavior is our objective in this stage.
 
+```sh
 kubectl exec -it pod1 - zsh
 
 pod1  ~  ping 172.16.34.1  
@@ -1253,6 +1270,7 @@ tcpdump -i ens5 -nn icmp
 03:00:50.938932 IP 172.16.158.6 > 172.16.34.1: ICMP echo request, id 116, seq 33, length 64  
 03:00:51.966849 IP 172.16.158.6 > 172.16.34.1: ICMP echo request, id 116, seq 34, length 64  
 03:00:52.986853 IP 172.16.158.6 > 172.16.34.1: ICMP echo request, id 116, seq 35, length 64
+```
 
 When attempting to ping `pod3` from `pod1`, the ping requests time out. Capturing ICMP packets on `k8s-w1` shows that ping requests are sent but no replies are received. The worker nodes `k8s-w1` and `k8s-w0` are on different subnets, which can affect inter-node communication.
 
@@ -1260,7 +1278,7 @@ When attempting to ping `pod3` from `pod1`, the ping requests time out. Capturin
 
 **Using CrossSubnet Mode**: Enable direct routing within the same subnet and use IPIP encapsulation for traffic across different subnets. Routes within the same subnet use the main interface, while routes to different subnets use `tunl0`.
 
-  
+```sh
 calicoctl patch ippool default-ipv4-ippool -p '{"spec":{"ipipMode":"CrossSubnet"}}'
 
 \# 모드 확인  
@@ -1277,6 +1295,7 @@ root@ip-172-20-63-146:~# route -n | grep UG
 kubectl exec -it pod1 -- zsh  
 \## 파드 Shell 에서 아래 입력  
 ping <pod2 혹은 pod3 IP>
+```
 
 -   Ping Pods on Same Subnet: Should work without encapsulation.
 -   Ping Pods on Different Subnets: Should work with IPIP encapsulation.
@@ -1285,6 +1304,7 @@ ping <pod2 혹은 pod3 IP>
 
 Enabling WireGuard Encryption: Capture traffic on the main interface to confirm encryption **(packets should not reveal Pod IPs)**.
 
+```sh
 (⎈|kubernetes-admin@kubernetes:default) root@k8s-m:~# calicoctl patch felixconfiguration default --type='merge' -p '{"spec":{"wireguardEnabled":true}}'  
 Successfully patched 1 'FelixConfiguration' resource  
 (⎈|kubernetes-admin@kubernetes:default) root@k8s-m:~# calicoctl get felixconfiguration default -o yaml | grep wireguardEnabled  
@@ -1352,6 +1372,7 @@ peer: XK6OS/pP/4/ntGg3WdPYTQP9SQLWNM884DlC/8OgK1s=
   endpoint: 192.168.10.102:51820  
   allowed ips: 172.16.184.0/24, 172.16.184.1/32, 172.16.184.3/32  
 (⎈|kubernetes-admin@kubernetes:default) root@k8s-m:~#
+```
 
 To maintain a healthy Kubernetes cluster with Calico networking, it’s crucial to monitor the Calico components for performance and issues. You can use Prometheus to collect valuable metrics from Calico components such as Felix and Typha, as well as kube-controllers.
 
@@ -1363,11 +1384,10 @@ First, enable Prometheus metrics in the Felix configuration: By default, Felix p
 
 Configure Calico to enable metrics reporting
 
-  
+```sh
 calicoctl get felixconfiguration \-o yaml  
 calicoctl patch felixconfiguration default  \--patch '{"spec":{"prometheusMetricsEnabled": true}}'
 
-  
 kubectl apply \-f \- <<EOF  
 apiVersion: v1  
 kind: Service  
@@ -1384,8 +1404,6 @@ spec:
 EOF  
 kubectl get svc,ep \-n kube-system felix-metrics-svc
 
-  
-  
 calicoctl get kubecontrollersconfiguration default \-o yaml  
 kubectl apply \-f \- <<EOF  
 apiVersion: v1  
@@ -1451,13 +1469,14 @@ subjects:
   namespace: calico-monitoring  
 EOF  
 kubectl get sa \-n calico-monitoring
-
+```
 Prometheus metrics are enabled by default on TCP port 9094 for `calico-kube-controllers`. Created a Service to expose these metrics; and just set up a service account and appropriate permissions for Prometheus to scrape metrics.
 
 ![[Raw/Media/Resources/13793ab41d1ce0741821a538c78c950b_MD5.png]]
 
 Create a ConfigMap with the Prometheus configuration to scrape metrics from Calico components.
 
+```yaml
 kubectl apply \-f \- <<EOF  
 apiVersion: v1  
 kind: ConfigMap  
@@ -1551,6 +1570,7 @@ spec:
       name: prometheus-config  
 EOF  
 kubectl get pods prometheus-pod \-n calico-monitoring \-owide
+```
 
 View metrics
 

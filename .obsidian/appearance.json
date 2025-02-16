@@ -4,9 +4,9 @@
   "textFontFamily": "ZedMono Nerd Font",
   "interfaceFontFamily": "ZedMono Nerd Font",
   "monospaceFontFamily": "ZedMono Nerd Font Mono",
-  "baseFontSize": 12,
+  "baseFontSize": 14,
   "baseFontSizeAction": false,
-  "cssTheme": "Minimal",
+  "cssTheme": "Catppuccin",
   "enabledCssSnippets": [
     "tableStyles",
     "images"

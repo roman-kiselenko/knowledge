@@ -64,14 +64,14 @@ So to summarise: our Deployment resource now exists in etcd.
 
 ### [Permalink](#heading-stage-4-pod-house-hunting "Permalink")**Stage 4: Pod House-Hunting**
 
-![](https://miro.medium.com/v2/resize:fit:996/1*8cDdXl2Eo1F2nNGTQ9MB-w.gif)
+![[Raw/Notes/Raw/Media/Resources/54da1009687387fe61370fff697aee9d_MD5.gif]]
 
 > ***Scheduling —*** *Finding a Suitable Home:*  
 > *See How baby is doing — “Our pods, however, are stuck in a* `Pending` state because they have not yet been scheduled to a Node. The final controller that resolves this is the scheduler.
 
 Scheduler will go through series of process to make the decision…
 
-![](https://miro.medium.com/v2/resize:fit:2000/1*rTxPHqXonOqKW4XnMwKQ5Q.png)
+![[Raw/Notes/Raw/Media/Resources/5fce5b26249ec2dc5d96d505570b160b_MD5.png]]
 
 [https://kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/](https://kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/)
 
@@ -91,7 +91,7 @@ Stage 4: Node Allocation — Preparing the Host Once a node is selected, the Kub
 
 > ***Here, the Container Creation Happens:***
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*OuXfcIUU-VShb3kXmEU2BA.png)
+![[Raw/Notes/Raw/Media/Resources/c8514b48cc25a1bdc2e9bf88862b42e5_MD5.png]]
 
 **How do Pods get IP?**
 

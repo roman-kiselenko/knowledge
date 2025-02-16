@@ -17,5 +17,5 @@
   "disAddCom": false,
   "useMD5ForNewAtt": true,
   "removeMediaFolder": true,
-  "removeOrphansCompl": false
+  "removeOrphansCompl": true
 }

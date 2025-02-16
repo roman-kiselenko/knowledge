@@ -10,7 +10,6 @@ TABLE WITHOUT ID file.link AS "Notes", elink(source, split(source, "https?://([\
 TABLE WITHOUT ID file.link AS "Notes", elink(source, split(source, "https?://([\w.\.\-]+)")[1]) as Source FROM "Raw/Notes" WHERE category = "container-runtimes" AND read = false SORT file.ctime DESC
 ```
 
-
 ## <mark style="background: #FF5582A6;">Observability</mark>
 
 ```dataview

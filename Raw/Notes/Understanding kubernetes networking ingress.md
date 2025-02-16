@@ -3,7 +3,7 @@ title: "Understanding kubernetes networking: ingress"
 source: https://medium.com/google-cloud/understanding-kubernetes-networking-ingress-1bc341c84078
 clipped: 2025-02-05
 published: 
-category: k8s
+category: network
 tags:
   - network
 read: false

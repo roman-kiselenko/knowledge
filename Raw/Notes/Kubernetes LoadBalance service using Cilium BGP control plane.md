@@ -3,7 +3,7 @@ title: Kubernetes LoadBalance service using Cilium BGP control plane
 source: https://medium.com/@valentin.hristev/kubernetes-loadbalance-service-using-cilium-bgp-control-plane-8a5ad416546a
 clipped: 2025-02-12
 published: 
-category: k8s
+category: network
 tags:
   - network
 read: false

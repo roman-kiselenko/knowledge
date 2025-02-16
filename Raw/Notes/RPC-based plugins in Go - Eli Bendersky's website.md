@@ -25,7 +25,7 @@ We'll start by explaining how the go-plugin package works and how it helps us wr
 
 The basic idea behind go-plugin is a run-time plugin system wherein each plugin is a separate binary and runs in its own OS process.
 
-![A plugin in its on OS process talking RPC with other plugins in their separate OS processes](https://eli.thegreenplace.net/images/2023/plugin-rpc-binaries.png)
+![[Raw/Notes/Raw/Media/Resources/c2a5619e455896f6f9c4f97b6881e100_MD5.png]]
 
 go-plugin lets us pick which RPC mechanism to use; it supports net/rpc and gRPC out of the box. Therefore, its API is a bit odd at first sight. Specifically, we are expected to define our own RPC methods both for the server (plugin) and the client (main application), and register them with go-plugin by implementing its [Plugin interface](https://pkg.go.dev/github.com/hashicorp/go-plugin#Plugin).
 

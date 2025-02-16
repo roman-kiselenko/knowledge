@@ -13,7 +13,7 @@ read: false
 
 Like most API servers, a, if not the, primary function of the Kubernetes API Server is to ingest data, store it, then return it when requested. Today we are going to be focusing on how the API Server stores data.
 
-![cover-image](https://danielmangum.com/static/k8s-asa-storage-interface.png)
+![[Raw/Notes/Raw/Media/Resources/47f64bf6a7c40af135fb232e69d600f0_MD5.png]]
 
 Table of Contents:
 
@@ -764,23 +764,23 @@ The canonical example of a transformer is one that performs some form of encrypt
 
 We’ve done a lot of explaining, let’s see it in action! Stepping through our relatively small program in a debugger helps unearth some of the hidden complexity. We can set a breakpoint at the location in which we instantiate the `etcd3` implementation of `storage.Interface` to step into the construction of our `codec`.
 
-![k8s-asa-storage-debug-0](https://danielmangum.com/static/k8s-asa-storage-debug-0.png)
+![[Raw/Notes/Raw/Media/Resources/68f5ef3ae175212c0f1a9c0a69a201d2_MD5.png]]
 
 We don’t pass any mutators, so we move immediately to constructing the JSON, YAML, and protobuf serializers for our `scheme`.
 
-![k8s-asa-storage-debug-1](https://danielmangum.com/static/k8s-asa-storage-debug-1.png)
+![[Raw/Notes/Raw/Media/Resources/5dd0acb474df3b54934c4def280dc081_MD5.png]]
 
 Next, the `newCodecFactory()` function is called, which appends all serializers as `decoders`, and sets the JSON serializer as the `legacySerializer`, which will eventually be used as our `encoder`.
 
-![k8s-asa-storage-debug-2](https://danielmangum.com/static/k8s-asa-storage-debug-2.png)
+![[Raw/Notes/Raw/Media/Resources/0c3f288cbd85cbbe3dac416830e62767_MD5.png]]
 
 When we invoke `LegacyCodec()` with the proper `schema.GroupVersion`, we get our implementation of `runtime.Codec`.
 
-![k8s-asa-storage-debug-3](https://danielmangum.com/static/k8s-asa-storage-debug-3.png)
+![[Raw/Notes/Raw/Media/Resources/4a7437e06e3ebea042d43063b68ae35d_MD5.png]]
 
 With our `codec` in place, we are ready to fetch the `ConfigMap` data from `etcd` and decode it into our passed `struct` pointer. The call to `Get()` can omit the `/registry/` prefix as we set it as the default when constructing the implmentation. The bulk of the work in this method is performed by the `transformer` and the `codec`, but because our `transformer` is mostly a no-op, we are primarily interested in decoding.
 
-![k8s-asa-storage-debug-4](https://danielmangum.com/static/k8s-asa-storage-debug-4.png)
+![[Raw/Notes/Raw/Media/Resources/f609c6f397a93a9ff74a6ba6a4a003b9_MD5.png]]
 
 We can tell that the data fetched from `etcd` is in protobuf format based on the magic number at the beginning of the value.
 
@@ -806,11 +806,11 @@ var (
 
 As we iterate through the decoders, we skip our JSON and YAML variants, before the protobuf decoder recognizes the data.
 
-![k8s-asa-storage-debug-5](https://danielmangum.com/static/k8s-asa-storage-debug-5.png)
+![[Raw/Notes/Raw/Media/Resources/d244b3f262e05903c62b6e4c0028b81d_MD5.png]]
 
 After validating the length of the data, we find ourselves back at using our `runtime.Scheme` (`runtime.ObjectTyper` and `runtime.ObjectCreater`) in order to convert the data into our Go representation of a `ConfigMap`.
 
-![k8s-asa-storage-debug-6](https://danielmangum.com/static/k8s-asa-storage-debug-6.png)
+![[Raw/Notes/Raw/Media/Resources/8f8ae89adb09dd9e69c5baec3d0c64aa_MD5.png]]
 
 Now that we have our object, we can print our data and see that it matches the `ConfigMap` we created at the beginning via `kubectl`.
 

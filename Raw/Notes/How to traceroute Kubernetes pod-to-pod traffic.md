@@ -3,7 +3,7 @@ title: How to traceroute Kubernetes pod-to-pod traffic
 source: https://medium.com/globant/tracerouting-pod-to-pod-traffic-a45fabd86f77
 clipped: 2023-09-29
 published: 
-category: k8s
+category: network
 tags:
   - pod
   - network

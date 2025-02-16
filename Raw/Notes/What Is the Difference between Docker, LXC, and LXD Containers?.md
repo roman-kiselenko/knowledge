@@ -12,7 +12,7 @@ read: false
 
 [Docker](https://kodekloud.com/blog/tag/docker/)
 
-![Difference between Docker, LXC, and LXD Containers](https://kodekloud.com/blog/content/images/size/w2000/2022/11/What-Is-the-Difference-between-Docker--LXC--and-LXD-Containers.png)
+![[Raw/Notes/Raw/Media/Resources/3677af75fc214f3d131d5be03957e62b_MD5.png]]
 
 Imagine you're a developer writing a cool app for Linux servers. But some people run Ubuntu 20.04 on their servers. Others run 22.04. Others run an entirely different operating system, such as Red Hat Enterprise Linux. So how do you make sure your app runs well on each operating system?
 

@@ -256,7 +256,7 @@ There are a couple more builtin checks you can use, but I don't want to go over 
 
 With all the checks in place, it's time to start monitoring their results. To do so, we will write some *PromQL* queries. Besides the `kuberhealthy_cluster_state` and `kuberhealthy_running` mentioned earlier, Kuberhealthy provides `kuberhealthy_check{check='namespace/check-name'}` and `kuberhealthy_check_duration_seconds{check='namespace/check-name'}` for each check. We will use those to build our monitoring rules and alerts.
 
-![Prometheus Graphs](https://i.imgur.com/E3PloNp.webp)
+![[Raw/Notes/Raw/Media/Resources/e675622045af0d773ec6d1cd0ea293b4_MD5.webp]]
 
 For availability reasons, Kuberhealthy runs multiple replicas of the operator, which means that we will get multiple results (series) - one for each operator Pod - for each queried check.
 
@@ -324,11 +324,11 @@ The important parts above really are just `expr` stanzas, in the first one we us
 
 In the third check we use `kuberhealthy_check_duration_seconds` metric and compute the average time it takes to run the check and we have it fail if it's more than 50 seconds. Word of caution for the *"duration"* metrics though - they describe the length of lifetime of whole check Pod, not the individual check attempts - you should take that into consideration when deciding the threshold for rule success/fail.
 
-![Prometheus Alerts](https://i.imgur.com/Jpbj6DH.webp)
+![[Raw/Notes/Raw/Media/Resources/75af22eb9f7ba62a2d4721f269967a7a_MD5.webp]]
 
 Finally, if you used the provided Alertmanager configuration shown in the beginning, you should be able to receive Slack alerts such as:
 
-![lack Alert](https://i.imgur.com/CSr6acL.webp)
+![[Raw/Notes/Raw/Media/Resources/951d22fa27c6f502549f62e70ac22564_MD5.webp]]
 
 In addition to these binary (`true`/`false`) rules, [Kuberhealthy docs](https://github.com/kuberhealthy/kuberhealthy/blob/master/docs/K8s-KPIs-with-Kuberhealthy.md#creating-key-performance-indicators) provide examples of calculating availability, utilization and latency from the available metrics.
 

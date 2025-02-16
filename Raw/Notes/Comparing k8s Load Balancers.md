@@ -3,7 +3,7 @@ title: Comparing k8s Load Balancers
 source: https://medium.com/thermokline/comparing-k8s-load-balancers-2f5c76ea8f31
 clipped: 2024-09-19
 published: 
-category: k8s
+category: network
 tags:
   - networking
   - cni

@@ -33,7 +33,7 @@ with the `**CONFIG_NET_NS**` option.
 
 ## Network namespace use case — 1
 
-![](https://miro.medium.com/v2/resize:fit:1366/1*LkphGiL5VSUX1eUmZAHQEA.png)
+![[Raw/Notes/Raw/Media/Resources/a2526b3824b2c4874fdf9f08d00549b6_MD5.png]]
 
 > Create two network namespaces `**red**` and `**green**`**.** Then **c**reate two different veth pairs `**eth0-r** → **veth-r**` and `**eth0-g** → **veth-g**`**.** Move `**eth0-r**` to the red namespace and `**eth0-g**` to the green namespace and then attach the other end of veth pairs `**veth-r**` and `**veth-g**` to the O**penVswitch** bridge `**OVS1**`. Assign the IP `**10.0.0.1/24**` to the `**eth0-r**` in the `red` namespace and `**10.0.0.2/2**4` to the `**eth0-g**` in the green namespace. In the end communicate with each other network namespace IP using `**ping**` command.
 
@@ -228,7 +228,7 @@ root@linux:~
 
 Now the two network interfaces `**red**` and `**green**` have path to each other via **OpenVswitch** `**OVS1**`.
 
-![](https://miro.medium.com/v2/resize:fit:1356/1*W9EXYXSvS1pijiPB13gGmQ.png)
+![[Raw/Notes/Raw/Media/Resources/e5c49bb14138cd5b55ae23430eb259ee_MD5.png]]
 
 7. Now as a next step we will configure the `**eth0-r**` and `**eth0-g**` **veth** interfaces inside the `**red**` and `**green**` namespace. Here we will bring up necessary interfaces within and outside namespace after assigning an IP address to the `**eth0-r**` and `**eth0-g**` interfaces inside the `**red**` and `**green**` namespace.
 
@@ -350,7 +350,7 @@ After bringing up the network interface `**veth-r**` and `**veth-g**` inside the
 
 Now this is the state of the network diagram where `**red**` and `**green**` namespaces are connected with each other through the `**OVS1**` switch.
 
-![](https://miro.medium.com/v2/resize:fit:1366/1*LkphGiL5VSUX1eUmZAHQEA.png)
+![[Raw/Notes/Raw/Media/Resources/a2526b3824b2c4874fdf9f08d00549b6_MD5.png]]
 
 9. In the following output, the `**ping**` command successfully confirms that connectivity between `**red**` and `**green**` namespace and this the end of the `**network namespace use case 1**`.
 
@@ -374,7 +374,7 @@ rtt min/avg/max/mdev = 0.230/0.944/1.659/0.714 ms
 
 ## Network namespace use case — 2
 
-![](https://miro.medium.com/v2/resize:fit:1278/1*vIawA70pX8pdKY0XQX3KGQ.png)
+![[Raw/Notes/Raw/Media/Resources/e2dc2bbf1a5d20f7385bfc8d59734923_MD5.png]]
 
 > In this exercise we’ll use the Linux native tool(without **OpenVswitch**) to create two network namespaces `**net1**` and `**net2**` then create a **veth** pair `**veth1**` and `**veth2**`. Here the `**veth1**` network interface from the `**net1**` network namespace is connected to the `**veth2**` network interface in the `**net2**` network namespace like an ethernet **cross cable** between two physical systems.
 
@@ -540,7 +540,7 @@ rtt min/avg/max/mdev = 0.106/0.106/0.106/0.000 ms
 
 ## Network namespace use case — 3
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*jcW1KmKWx-C9F0hzgTbiew.png)
+![[Raw/Notes/Raw/Media/Resources/7ce105bc3db4cb7f09bcde7238846d7a_MD5.png]]
 
 > In this exercise the the network namespaces `**net1**` and `**net2**` are connected with each other via `**OVS1**` OpenVswitch with **VLAN** tag 10. For this exercise, create two network namespace `**net1**` and `**net2**`. Create two veth pairs `**eth0-n1 → veth-n1**` and `**eth0-n2 → veth-n2**`. Move the `**eth0-n1**` to the `**net1**` network namespace and move the `**eth0-n2**` to the `**net2**` network namespace. Attach the other ends `**veth-n1**` and `**veth-n2**` to the `**OVS1**` OpenVswitch and assign **VLAN** tag **10** to the **OVS** ports. Then configure the IP address `192.168.21.1/24` to the **eth0-n1** and `192.168.21.2` to the **eth0-n2** network interface in their respective namespace.
 
@@ -597,7 +597,7 @@ To remove vlan tag use the following command
 
 ## Network namespace use case — 4
 
-![](https://miro.medium.com/v2/resize:fit:1362/1*LjzFuWt322PfcThx0_WXbA.png)
+![[Raw/Notes/Raw/Media/Resources/f1dff44f3f5ca844174bd29db1404758_MD5.png]]
 
 > In this exercise:
 
@@ -725,7 +725,7 @@ rtt min/avg/max/mdev = 0.210/1.591/2.973/1.381 ms
 
 ## Network namespace use case — 5
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*TiHnOLThsQh3kdidvISzMw.png)
+![[Raw/Notes/Raw/Media/Resources/f29f89c7a22cbf73ea97322e3ebe90bc_MD5.png]]
 
 > Create a bridge network(`**vnet-br0**`) using Linux internal bridge utility, create two network namespaces **red**, and **green**. Create two VETH pairs for the red and green namespace, connect one end of the veth pair to the specific namespace and another end to the internal bridge(`**vnet-br0**`). Make sure that the interface in the `**red**` and `**green**` namespace can communicate with the internal and external networks.
 

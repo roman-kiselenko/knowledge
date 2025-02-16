@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Raw/Notes/eBPF and Cillum CNI.md",
+                "file": "Stuff/Articles.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "eBPF and Cillum CNI"
+              "title": "Articles"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 437.5
   },
   "right": {
     "id": "60fe3580cc0200ed",
@@ -186,47 +185,52 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": true,
       "templates:Insert template": true,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-local-images-plus:Local Images Plus  0.16.3\r\nLocalize attachments (plugin folder)": false
     }
   },
   "active": "d0ee82b1cd6f1161",
   "lastOpenFiles": [
-    "Raw/Media/Resources/da271af383015eb91df6c551c3ba0da6_MD5.png",
-    "Raw/Media/Resources/a02ed8c24e468e2fad1487b01622607e_MD5.png",
-    "Raw/Media/Resources/1d9b2dbaed38f27d0cb11dfbae141d29_MD5.png",
-    "Raw/Media/Resources/764111b2437bae12c1166df1483d2600_MD5.png",
-    "Raw/Media/Resources/2f830e65605d8559473eb60f3b1c47f2_MD5.png",
-    "Raw/Media/Resources/e51cec174a9a984dfa52b5880f021b05_MD5.png",
-    "Raw/Media/Resources/6a76123929bec9efba23097859f0ce2a_MD5.png",
-    "Raw/Media/Resources/54ca4398cbf292468db40bce5d449f4b_MD5.png",
-    "Raw/Media/Resources/58193a0b35b4b6ee2e154e2f3bc9d10b_MD5.png",
-    "Raw/Media/Resources/e8e202ee441576c5859f9b3c6fb92483_MD5.png",
-    "Raw/Media/Resources/f11bd9008d3482014defc4d481ea34de_MD5.png",
-    "Raw/Notes/Calico CNI and its networking mode.md",
+    "Stuff/kubectl.md",
+    "README.md",
     "Raw/Notes/eBPF and Cillum CNI.md",
     "Stuff/Articles.md",
-    "Raw/Notes/Calico Routing Modes.md",
-    "Raw/Notes/Deep dive into Kubernetes network model and communication.md",
-    "Raw/Notes/Exploring the basics of Istio traffic management.md",
-    "Raw/Notes/Kubernetes LoadBalance service using Cilium BGP control plane.md",
-    "Snippets/Common.md",
     "Snippets/Darwin/macos.md",
-    "Stuff/Snippets.md",
-    "Stuff/Notes.md",
-    "Raw/Notes/Understanding kubernetes networking ingress.md",
-    "Raw/Notes/Understanding kubernetes networking services.md",
-    "Raw/Notes/Tracing Kubernetes Services.md",
+    "Snippets/Darwin/dnsmasq.md",
+    "Raw/Media/Resources/ec286c50ecb0b3ef5e44544cbcee5903_MD5.png",
+    "Raw/Media/Resources/ee0eb5bdecd5973934e80ad904952f7f_MD5.png",
+    "Raw/Media/Resources/f02ae05cda516e1c1148a249555d7b66_MD5.png",
     "Raw/Notes/Learning Kubernetes VXLAN Network with Flannel.md",
-    "Raw/Notes/How Kubernetes Networking Works – Under the Hood.md",
-    "Raw/Notes/How to expose Kubernetes services using Istio API gateway from scratch?.md",
-    "Raw/Notes/Terraform best practices for reliability at any scale - Substrate.md",
+    "Raw/Notes/Основы iptables для начинающих. Часть 3. Таблица nat.md",
+    "Raw/Notes/RPC-based plugins in Go - Eli Bendersky's website.md",
+    "Raw/Notes/Death by a thousand microservices.md",
+    "Raw/Notes/Why I Will Never Use Alpine Linux Ever Again.md",
+    "Raw/Notes/A beginner’s guide to OpenTelemetry.md",
+    "Raw/Notes/OpenTelemetry Operator.md",
+    "Raw/Notes/Building Docker Images The Proper Way.md",
+    "Raw/Notes/Understanding Kubernetes’ Cluster Networking.md",
+    "Raw/Notes/Calico Routing Modes.md",
+    "Raw/Notes/Calico CNI and its networking mode.md",
+    "Raw/Media/Resources/ffca6a6bd6eb362b22f0605fd56f80ec_MD5.jpg",
+    "Raw/Media/Resources/fe20b5e75f892cbb2fb7484fd646df5f_MD5.png",
+    "Raw/Media/Resources/fdff1db9e706af2811e8c0da1f5ca51d_MD5.png",
+    "Raw/Media/Resources/fd63920f12e11ce4f7c9612bb3246c5f_MD5.png",
+    "Raw/Media/Resources/fd131ef29572c77d8d0d9a47a7e7481b_MD5.svg",
+    "Raw/Media/Resources/fd12837ca734895e22c49a13f682cb24_MD5.png",
+    "Raw/Media/Resources/fb76655cc806f3322c7ff8313a79b0c6_MD5.webp",
+    "Raw/Media/Resources",
     "Raw/Notes/Kubernetes network learning with Cilium and eBPF.md",
-    "Raw/Notes/Kubernetes Services  Achieving optimal performance is elusive.md",
-    "Raw/Notes/Security Containers Control Groups.md",
+    "Raw/Notes/A Deeper Dive of kube-scheduler.md",
+    "Raw/Notes/Raw/Media/Resources",
+    "Raw/Notes/Raw/Media",
+    "Raw/Notes/Raw",
+    "Raw/Notes/Kubernetes ingress, deep dive.md",
     "Raw/Notes/Kubernetes scheduler deep dive.md",
-    "Raw/Notes/Kubernetes in Kubernetes with vcluster.md",
+    "Raw/Notes/Go Gets New Reflection-Based Protocol Buffers API.md",
+    "Raw/Notes/Simple Prometheus queries for metrics inspection.md",
+    "Raw/Notes/Demystifying Containers – Part IV Container Security.md",
     "Raw/Notes/How to debug OpenShift operators on a live cluster using dlv.md",
-    "Raw/Notes/The Kubernetes dynamic client.md",
+    "Raw/Notes/Exploring the basics of Istio traffic management.md",
     "Clippings",
     "CV/CV.pdf",
     "Work",
@@ -235,10 +239,6 @@
     "Raw/Media/buzzing-across-space-illustrated-childrens-guide-to-ebpf.pdf",
     "CV/Prepare/Companies",
     "CV/Prepare",
-    "Stuff/k8s/graphs/workloads.canvas",
-    "Stuff/k8s/APIs",
-    "Stuff/k8s/graphs",
-    "Stuff/k8s/CNI",
-    "Stuff/k8s/CRI"
+    "Stuff/k8s/graphs/workloads.canvas"
   ]
 }

@@ -3,13 +3,13 @@ title: "Kube-Proxy: What is it and How it Works"
 source: https://medium.com/@amroessameldin/kube-proxy-what-is-it-and-how-it-works-6def85d9bc8f
 clipped: 2023-09-15
 published: 
-category: k8s
+category: network
 tags:
   - kube-proxy
 read: false
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*1B2ObLwgcpadlLlq)
+![[Raw/Notes/Raw/Media/Resources/0b18314e2bebb28f405384ed3fa7f296_MD5.jpg]]
 
 Photo by [Jordan Harrison](https://unsplash.com/@jordanharrison?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=medium&utm_medium=referral)
 
@@ -49,25 +49,25 @@ Let’s call these **Pod01** and **Pod02.** Now the API server will create an ab
 
 Now the API server maps the IP address of **SVC01** to 2 IP addresses **EP01** and **EP02**.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*jCyvCDbZWgR7lzpz)
+![[Raw/Notes/Raw/Media/Resources/cf5934f7eb3bed4ed40e754386cec70a_MD5.png]]
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*eCLsmf20LyFXDZpF)
+![[Raw/Notes/Raw/Media/Resources/8f34187dcec598edcea6423390e28e33_MD5.png]]
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*ENKKISTaPlDefxmh)
+![[Raw/Notes/Raw/Media/Resources/76704a2d3abcbc7db09a75d7374fdea3_MD5.png]]
 
 All of this configuration is currently only part of the control plane. We want this mapping to be actually implemented on the network. Once it is applied, traffic coming to the IP of **SVC01** will be forwarded to **EP01** or **EP02**.
 
 So here comes the Kube-Proxy. The API server will advertise these updates to the Kube-proxy on each node. Which will apply it as internal rules to the node.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*8Vq6VNZsIapZIMTL)
+![[Raw/Notes/Raw/Media/Resources/dba159a167f67538e951c2bf466ee3cf_MD5.png]]
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*4Wa9suu5H97niEGs)
+![[Raw/Notes/Raw/Media/Resources/7f5227368f23eec2912cfd46a9a8eacf_MD5.png]]
 
 Now traffic destined to the SVC01 IP will follow this **DNAT** rule and get forwarded to the Pods. Remember that EP01 and EP02 are basically the IPs of the Pods.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*--YwrIIQ7qddRMjv)
+![[Raw/Notes/Raw/Media/Resources/465c32482cead79f23178c08ff6b95c0_MD5.png]]
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*nJ5oJVmq-oTTeYEy)
+![[Raw/Notes/Raw/Media/Resources/1f720466e21b4436d3260fb10fe712ab_MD5.png]]
 
 Now of course I tried to keep the scenario as simple as possible. This is just to focus on the important part of the Kube-Proxy. However, there are a couple of points that are worth mentioning :
 
@@ -89,7 +89,7 @@ When running in this mode, Kube-proxy inserts the Service-to-Pod NAT rules in th
 
 Now the Kube-Proxy role can be described more as the “installer” of the rules.
 
-![](https://miro.medium.com/v2/resize:fit:1216/0*64xlPxr1FArr5gmI)
+![[Raw/Notes/Raw/Media/Resources/a36c3a31ff88e0db9e012dc663b3ea43_MD5.png]]
 
 The downside of this mode is that IPtables uses a sequential approach going through its tables. Because it was originally designed as a packet filtering component.
 
@@ -119,7 +119,7 @@ You can use the /proxyMode endpoint to check the kube-proxy mode.
 
 First connect through SSH to one of the nodes in the cluster. Then use the command **curl -v localhost:10249/proxyMode**.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*GSrWhz72YY0lJrF7)
+![[Raw/Notes/Raw/Media/Resources/1b99fbea31654a2bc86c5ad30e4ad9d2_MD5.png]]
 
 Here you can see that Kube-Proxy is using iptables mode.
 
@@ -135,31 +135,31 @@ Steps:
 
 -   First we’ll create a redis deployment with 2 replicas.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*XqobgGS9yBCQAjZ2)
+![[Raw/Notes/Raw/Media/Resources/55273fc26f221d09d6bb7d7c40280e1a_MD5.png]]
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*AhwyjFKKNZliBsPl)
+![[Raw/Notes/Raw/Media/Resources/ae6487fbd42fdb0947c77e766fd1f773_MD5.png]]
 
 Now let’s check the Pods created.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*4P0q8NzZ4vjJiXHv)
+![[Raw/Notes/Raw/Media/Resources/86a87390533da1e51154423386233932_MD5.png]]
 
 You can see we have 2 running Pods with their IP addresses.
 
 -   Let’s create a Service that is attached to these Pods. To do this we create the Service with a selector matching the Pods labels.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*wFOAMzbj4akSRth-)
+![[Raw/Notes/Raw/Media/Resources/892a4b1542e757057113c9c8b2255d37_MD5.png]]
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*AWtQ3tJBc65W0zri)
+![[Raw/Notes/Raw/Media/Resources/a736d8b4b984f74c0533523aa65c2d97_MD5.png]]
 
 Listing available Services, we can see our redis Service with its IP address.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*nkylclPk-6f-Og5b)
+![[Raw/Notes/Raw/Media/Resources/a048e0974535e836079869ff87354312_MD5.png]]
 
 Note that we didn’t specify the Service type in the YAML manifest. This is because the default type is ClusterIP.
 
 -   Now if we list the endpoints, we’ll find that our Service has 2 endpoints corresponding to our Pods.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*q7uvnT9CQM6B4EdN)
+![[Raw/Notes/Raw/Media/Resources/96481acbc50a605a408ee745a65b29e2_MD5.png]]
 
 You’ll notice that the 2 endpoints represent the IP addresses of the Pods.
 
@@ -167,7 +167,7 @@ So far all of this configuration is pretty much straight forward. Now let’s ex
 
 -   We’ll list the IPtables rules on one of the nodes. Note that you need to SSH into the node first to run the following commands.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*Dj11jSFGoZZJatgA)
+![[Raw/Notes/Raw/Media/Resources/626049da2f8fedcaff9e0028e43fad0b_MD5.png]]
 
 Of course we’ll not dive into all the details of IPtables here. We’ll try to highlight only the important information for our scenario.
 
@@ -183,7 +183,7 @@ In other words, packets going through the PREROUTING chain will be directed to t
 
 So let’s check what’s inside this KUBE-SERVICES.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*A57guat40RhNYHaa)
+![[Raw/Notes/Raw/Media/Resources/ee6c11945b02d731b546064009601d6f_MD5.png]]
 
 Now what’s this cryptography here? Well, simply these are a couple more chains.
 
@@ -193,7 +193,7 @@ You can also see some information to the right of the IP address. These represen
 
 All of this ensures that we’re looking at the correct section of IPtables. Now let’s get into this chain.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*UI5zP_ohf-1c1AEW)
+![[Raw/Notes/Raw/Media/Resources/6a8050dc1caf7e20cd9d2e70a3d5642e_MD5.png]]
 
 And finally here we’ve arrived at our NAT rules. You’ll find 2 additional chains created. Each starts with **KUBE-SEP** and then a random id. These correspond to the Service endpoints (SEP). You can see the IP address of each Pod listed for each chain.
 
@@ -201,7 +201,7 @@ Notice this **statistic mode random probability** line in the middle? This is th
 
 Going into any of these KUBE-SEP chains we can see it’s basically a **DNAT** rule.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*btf9unAgP3gZ_UGf)
+![[Raw/Notes/Raw/Media/Resources/aa7de5aa3d9868a306f416fccce5c3aa_MD5.png]]
 
 So that’s it for the IPtables rules for the Service. As you now know how to dig deeper into this, you can start exploring more of these rules in your environment.
 

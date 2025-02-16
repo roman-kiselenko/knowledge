@@ -3,7 +3,7 @@ title: eBPF and Cillum CNI
 source: https://sigridjin.medium.com/ebpf-and-cillum-cni-1c3ad2a1e4e9
 clipped: 2025-02-16
 published: 
-category: k8s
+category: network
 tags:
   - network
   - cni

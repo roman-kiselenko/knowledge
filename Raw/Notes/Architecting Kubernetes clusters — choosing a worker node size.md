@@ -14,7 +14,7 @@ Updated in August 2023
 
 ---
 
-![Architecting Kubernetes clusters — choosing a worker node size](https://learnk8s.io/a/23c83c8632770bc29860b854504a0926.svg)
+![[Raw/Notes/Raw/Media/Resources/105c24d4b432cdcd75f44ecb7523aea7_MD5.svg]]
 
 ---
 
@@ -51,7 +51,7 @@ For example, imagine you need a cluster with a total capacity of 8 CPU cores and
 
 Here are just two of the possible ways to design your cluster:
 
-![Small vs. large nodes in a Kubernetes cluster](https://learnk8s.io/a/c642b260295b87df85d97a6e8c20be48.svg)
+![[Raw/Notes/Raw/Media/Resources/f3ab6f5710fec064b2f717dd09544b1f_MD5.svg]]
 
 Both options result in a cluster with the same capacity — but the left option uses four smaller nodes, whereas the right one uses two larger nodes.
 
@@ -84,7 +84,7 @@ CPU and memory resources are usually reparted as follows:
 3.  Pods.
 4.  Eviction threshold.
 
-![Resource allocations a in a Kubernetes node](https://learnk8s.io/a/d627f4247a50662c83a2a40703a8b693.svg)
+![[Raw/Notes/Raw/Media/Resources/0091649fc9c78ee78ce012fd340d0376_MD5.svg]]
 
 You might wonder what resources are assigned to each of those.
 
@@ -120,7 +120,7 @@ For an 8GB and 2 vCPU instance, the available resources are reparted as follows:
 
 Only 75% of the total memory is used to run workloads.
 
-![Resource allocations a in a Kubernetes node with 2 vCPU and 8GB of memory](https://learnk8s.io/a/3de0f4647a4b0d71b196d4e394aa5451.svg)
+![[Raw/Notes/Raw/Media/Resources/8090cb7386d3b188f2d7c1a4d1c69ee1_MD5.svg]]
 
 *But it doesn't end there.*
 
@@ -130,7 +130,7 @@ Examples include Kube-proxy, a log agent such as Fluentd or Fluent Bit, NodeLoca
 
 **This is a fixed cost you must pay regardless of the node size.**
 
-![Resource allocations a in a Kubernetes node with DaemonSets](https://learnk8s.io/a/e77f8c687be1e38bd35470e177e4290a.svg)
+![[Raw/Notes/Raw/Media/Resources/e385a1cf1d5a27f58b672e591a469fd4_MD5.svg]]
 
 With this in mind, let's examine the pros and cons of the two opposing directions of "few large nodes" and "many small nodes".
 
@@ -179,13 +179,13 @@ The total memory available to pods is `16GB - (2.8GB + 0.1GB)` — where 0.1GB t
 
 Finally, pods can consume up to 13.1GB of memory.
 
-![Resource allocations a in a Kubernetes node with 2 vCPU and 16GB of memory](https://learnk8s.io/a/c72727b60ee6387d73c40004f9003561.svg)
+![[Raw/Notes/Raw/Media/Resources/1cf0ca0df98467d96d07919458a7bbeb_MD5.svg]]
 
 **Unfortunately, this is not enough (i.e. 7 replicas require 14GB of memory, but you have only 13.1GB), and you should provision a compute unit with more memory to deploy the workloads.**
 
 If you use a cloud provider, the next available increment for the compute unit is 4 vCPU and 32GB of memory.
 
-![A node with 2 vCPU and 16GB of memory is insufficient to run seven replicas](https://learnk8s.io/a/c1be9a8de0824f6e5abcba5371bb9b4e.svg)
+![[Raw/Notes/Raw/Media/Resources/aa6a2585c13b56dd3166356b4c760341_MD5.svg]]
 
 *Excellent!*
 
@@ -203,7 +203,7 @@ The total available memory for pods is 2.9GB; since the app only requires 2GB, t
 
 *Great!*
 
-![Resource allocations a in a Kubernetes node with 2 vCPU and 16GB of memory](https://learnk8s.io/a/f97ca286843a3ff5ee0fbc9a55630829.svg)
+![[Raw/Notes/Raw/Media/Resources/104db75b82d69447e0c7cc2d3030b574_MD5.svg]]
 
 *Let's compare the two setups.*
 
@@ -217,7 +217,7 @@ In the second, 7.7GB (1.1GB x 7 instances) of memory and 360m of CPU (60m x 7 in
 
 **You can already notice how resources are utilized more efficiently when provisioning larger nodes.**
 
-![Comparing resource allocations between a cluster with a single node and another with multiple nodes](https://learnk8s.io/a/23885fd9cefd09159d3bab9618a55aae.svg)
+![[Raw/Notes/Raw/Media/Resources/419e650396ec30772f95545991b593d3_MD5.svg]]
 
 *But there's more to it.*
 
@@ -246,7 +246,7 @@ Max Pod       14.22
 
 The above numbers suggest you run out of CPU before memory and can host up to 13 pods in the 4 vCPU and 32GB worker node.
 
-![Calculating the pod capacity for a 2 vCPU and 32GB worker node](https://learnk8s.io/a/8166b554c895b638a68d2ef76475f943.svg)
+![[Raw/Notes/Raw/Media/Resources/5eb000e21bb859ee7879bd8c6e76b052_MD5.svg]]
 
 *What about the second scenario?*
 
@@ -256,7 +256,7 @@ Not really.
 
 **While the instances still have more CPU, they only have 0.9GB of memory available after you deploy the first pod.**
 
-![Calculating the pod capacity for a 1 vCPU and 4GB worker node](https://learnk8s.io/a/2e379971f411f7ca2908ebed0798c020.svg)
+![[Raw/Notes/Raw/Media/Resources/60a7ed622190c179a2e471837071e5db_MD5.svg]]
 
 In conclusion, not only does the larger node utilise resources better, but it can also minimise the fragmentation of resources and increase efficiency.
 
@@ -272,13 +272,13 @@ For example, if you have a high-availability application consisting of 5 replica
 
 This is because the five replicas can be distributed only across two nodes, and if one of them fails, it may take down multiple replicas at once.
 
-![The replication factor for a cluster with two nodes and five replicas is two](https://learnk8s.io/a/4db4fb1e1af84fcbcec51b23f9b9e77f.svg)
+![[Raw/Notes/Raw/Media/Resources/e804b4e7d8d5ca7384ee94c85e5d7458_MD5.svg]]
 
 On the other hand, if you have at least five nodes, each replica can run on a separate node, and a failure of a single node takes down at most one replica.
 
 **Thus, you might require a certain minimum number of nodes in your cluster if you have high-availability requirements.**
 
-![The replication factor for a cluster with five nodes and five replicas is five](https://learnk8s.io/a/4b0ddbe420f754323537c3bde7f938e2.svg)
+![[Raw/Notes/Raw/Media/Resources/5c541393c8cac2ba02535c935e66809b_MD5.svg]]
 
 You should also take into account the size of the node.
 
@@ -327,7 +327,7 @@ An application with 0.3 vCPU and 2GB of memory is deployed in the cluster and sc
 
 Both setups are running at total capacity — they don't have any extra space for pods left.
 
-![Two clusters with: one pod per node and all pods into a single node](https://learnk8s.io/a/f9fd8d7bfbc21dbf4e2f34d68489d1f7.svg)
+![[Raw/Notes/Raw/Media/Resources/9fe04793bc8ca33b8ecec1da984ed6c2_MD5.svg]]
 
 *What happens when the deployment scales to 15 replicas (i.e. two more)?*
 
@@ -338,7 +338,7 @@ In both clusters, the Cluster Autoscaler detects that the extra pods are un-sche
 
 Since there isn't any time difference between provisioning large or small instances, the nodes will be available simultaneously in both scenarios.
 
-![Pending pods triggering the autoscaler regardless of their size](https://learnk8s.io/a/ab3adead1eea7f1615bff64488318317.svg)
+![[Raw/Notes/Raw/Media/Resources/2bb65f63b893e3f00026d11a40b3dbe6_MD5.svg]]
 
 *However, can you spot another difference?*
 
@@ -348,14 +348,14 @@ Instead, the second cluster is still maxed out.
 
 You could argue that smaller increments are more efficient and cheaper because you add only what you need.
 
-![Autoscaling increments in large and small nodes](https://learnk8s.io/a/4b5b12047d321e34a6c2455677fd99a0.svg)
+![[Raw/Notes/Raw/Media/Resources/0c47e7f5f7caddb1684085234a57a3c8_MD5.svg]]
 
 But let's observe what happens when you scale the deployment again — this time to 17 replicas (i.e. two more).
 
 -   The first cluster creates two extra pods in the existing node.
 -   The second cluster is running at capacity. The pods are Pending, and the Cluster Autoscaler is triggered. Finally, two more worker nodes are provisioned.
 
-![Trade-offs for autoscaling increments in Kubernetes nodes](https://learnk8s.io/a/be78be3cd35dc7387e2352c4630c5ae9.svg)
+![[Raw/Notes/Raw/Media/Resources/69deefe75033572d4964d65cd729107e_MD5.svg]]
 
 **In the first cluster, the scaling is almost instantaneous.**
 
@@ -385,7 +385,7 @@ The kubelet will:
 
 At the end of those steps, the Pod is alive, and the kubelet can move on to checking liveness and readiness probes and update the control plane with the state of the new Pod.
 
-![The Kubelet and the CRI, CSI and CNI interfaces](https://learnk8s.io/a/b321498cc64bfd4bc424abd7a8a8f461.svg)
+![[Raw/Notes/Raw/Media/Resources/798ff2a83d49cc358b692b6f8de4be18_MD5.svg]]
 
 **It's essential to notice that when the CRI creates the container in the pod, it must first download the container image.**
 
@@ -407,7 +407,7 @@ What happens to the two clusters?
 
 In the first scenario, only 1GB is downloaded.
 
-![The container runtime download the container image once and runs 13 replicas](https://learnk8s.io/a/352ea906f7800c90ed71deea01eac4f1.svg)
+![[Raw/Notes/Raw/Media/Resources/4b80466a743129990b17373c10a767a5_MD5.svg]]
 
 However, you download 13GB of container images in the second scenario.
 
@@ -415,7 +415,7 @@ Since downloading takes time, the second cluster is slower at creating replicas 
 
 It also uses more bandwidth and makes more requests (i.e. at least one request for each image layer, 13 times), making it more prone to network glitches.
 
-![Each of the 13 container runtimes download one image](https://learnk8s.io/a/d4dfe6e68938734993dd6b5bd2498e7b.svg)
+![[Raw/Notes/Raw/Media/Resources/f68fba3fc394c1633eb8f92460ea3cab_MD5.svg]]
 
 It's essential to notice that this issue compounds with the Cluster Autoscaler.
 
@@ -482,11 +482,11 @@ Let's have a look at our two clusters:
 
 The first generates 5 requests per second.
 
-![A single kubelet issueing 5 requests per second](https://learnk8s.io/a/cb5baa1a4b290bff10e3f693fb5fce97.svg)
+![[Raw/Notes/Raw/Media/Resources/7a6b31450de5588ecc895514fd9e780f_MD5.svg]]
 
 The second 65 requests per second (i.e. `13 x 5`).
 
-![13 kubelets issueing 5 requests per second each](https://learnk8s.io/a/106f96256da416271d46d757e912c983.svg)
+![[Raw/Notes/Raw/Media/Resources/1566de34928a80f2e338fe8a34e73e58_MD5.svg]]
 
 You should scale your API server to cope with more frequent requests when you run clusters with many smaller nodes.
 
@@ -516,7 +516,7 @@ To understand what that means, let's take a step back and look at how the cluste
 
 In most cases, each worker node is assigned a subnet with 256 addresses (e.g. `10.0.1.0/24`).
 
-![Each worker node has a subnet assigned](https://learnk8s.io/a/cc3274f66d411c87546f1eb88a42511d.svg)
+![[Raw/Notes/Raw/Media/Resources/01d6982c3fa4c4fb25b440c1cbda8fe4_MD5.svg]]
 
 Of those, [two are restricted](https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/) and you can use 254 for running your Pods.
 

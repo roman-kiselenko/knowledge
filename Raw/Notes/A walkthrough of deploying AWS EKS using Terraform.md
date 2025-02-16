@@ -231,7 +231,7 @@ There are 2 types of policies, Identity and resource-based policy
 
 Identity-based policies can be attached to all identities and resource-based policies belong to resources. They’re very similar in what they do, but there are a few key differences; an identity-based policy answers the question “*Which API calls can this identity perform on which resources?*” whereas a resource-based policy answers the question: “*Which identities can perform which actions on me?*”.
 
-![IAM Role and permissions](https://www.tecracer.com/blog/img/2021/08/iam_role.png)
+![[Raw/Notes/Raw/Media/Resources/75429214facfedc05f984528b62dca6d_MD5.png]]
 
 Each role has a trust relationship which determines the entities that can assume the role. It also has a set of permissions that define which privileges entities get after they assume the role.
 

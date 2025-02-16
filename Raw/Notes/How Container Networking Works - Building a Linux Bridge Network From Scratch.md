@@ -3,7 +3,7 @@ title: How Container Networking Works - Building a Linux Bridge Network From Scr
 source: https://labs.iximiuz.com/tutorials/container-networking-from-scratch
 clipped: 2023-12-01
 published: 
-category: k8s
+category: network
 tags:
   - containers
   - networking

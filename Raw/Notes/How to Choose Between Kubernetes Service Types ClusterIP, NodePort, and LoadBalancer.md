@@ -96,7 +96,7 @@ spec:
 
 **Access the Service**: Once configured, Kubernetes will provision an external load balancer and provide you with a public IP that you can use to access the service.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*EVNp3tiXPSX29XXMTxA8WA.png)
+![[Raw/Notes/Raw/Media/Resources/d0fb7c00b8d315f24b30c2329b4b06e4_MD5.png]]
 
 -   **Use** `**ClusterIP**` when you only need **internal communication** within the cluster and don't need to expose the service externally.
 -   **Use** `**NodePort**` when you need a **simple external access** for testing or in a non-cloud environment. It’s good for exposing a service temporarily or on-premises Kubernetes clusters.
