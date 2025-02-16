@@ -8,6 +8,20 @@
         "type": "tabs",
         "children": [
           {
+            "id": "814149ddab531b8a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Raw/Notes/eBPF and Cillum CNI.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "eBPF and Cillum CNI"
+            }
+          },
+          {
             "id": "d0ee82b1cd6f1161",
             "type": "leaf",
             "state": {
@@ -21,7 +35,8 @@
               "title": "Articles"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -88,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 437.5
+    "width": 225,
+    "collapsed": true
   },
   "right": {
     "id": "60fe3580cc0200ed",
@@ -191,10 +207,10 @@
   },
   "active": "d0ee82b1cd6f1161",
   "lastOpenFiles": [
-    "Stuff/kubectl.md",
-    "README.md",
     "Raw/Notes/eBPF and Cillum CNI.md",
     "Stuff/Articles.md",
+    "Stuff/kubectl.md",
+    "README.md",
     "Snippets/Darwin/macos.md",
     "Snippets/Darwin/dnsmasq.md",
     "Raw/Media/Resources/ec286c50ecb0b3ef5e44544cbcee5903_MD5.png",
