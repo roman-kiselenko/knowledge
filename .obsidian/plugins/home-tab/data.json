@@ -25,23 +25,19 @@
   "recentFilesStore": [
     {
       "filepath": "Stuff/Articles.md",
-      "timestamp": 1738777428991
+      "timestamp": 1739711005486
     },
     {
-      "filepath": "Raw/Notes/Understanding kubernetes networking ingress.md",
-      "timestamp": 1738777397786
+      "filepath": "Raw/Notes/Calico Routing Modes.md",
+      "timestamp": 1739710979005
     },
     {
-      "filepath": "Raw/Notes/Understanding kubernetes networking services.md",
-      "timestamp": 1738777340747
+      "filepath": "Raw/Notes/Deep dive into Kubernetes network model and communication.md",
+      "timestamp": 1739710233482
     },
     {
-      "filepath": "Raw/Notes/Tracing Kubernetes Services.md",
-      "timestamp": 1738776457774
-    },
-    {
-      "filepath": "Raw/Notes/Learning Kubernetes VXLAN Network with Flannel.md",
-      "timestamp": 1738776443953
+      "filepath": "Raw/Notes/Exploring the basics of Istio traffic management.md",
+      "timestamp": 1739710160288
     }
   ],
   "starredFileStore": [],

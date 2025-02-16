@@ -28,9 +28,9 @@ Convert all mkv files and reduce size by 2
 ```shell
 #!/bin/bash
 for i in *.MOV; do
-  ffmpeg -i "$i" -map_metadata 0 -vcodec h264 -acodec mp2 "${i%.*}.mp4";
+  # ffmpeg -i "$i" -map_metadata 0 -vcodec h264 -acodec mp2 "${i%.*}.mp4";
   # rm -rf "$i"
-  # ffmpeg -i "$i" -vf "scale=trunc(iw/4)*2:trunc(ih/4)*2" -c:v libx265 -crf 28 "${i%.*}.mp4";
+  ffmpeg -i "$i" -vf "scale=trunc(iw/4)*2:trunc(ih/4)*2" -c:v libx265 -crf 28 "${i%.*}.mp4";
 done
 ```
 

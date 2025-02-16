@@ -1,10 +1,10 @@
 {
   "accentColor": "#5351c8",
   "theme": "system",
-  "textFontFamily": "Work Sans",
-  "interfaceFontFamily": "Work Sans",
-  "monospaceFontFamily": "ZedMono Nerd Font",
-  "baseFontSize": 16,
+  "textFontFamily": "ZedMono Nerd Font",
+  "interfaceFontFamily": "ZedMono Nerd Font",
+  "monospaceFontFamily": "ZedMono Nerd Font Mono",
+  "baseFontSize": 12,
   "baseFontSizeAction": false,
   "cssTheme": "Minimal",
   "enabledCssSnippets": [
