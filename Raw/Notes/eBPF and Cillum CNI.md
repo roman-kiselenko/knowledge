@@ -233,7 +233,7 @@ Key Configuration Parameters Explained:
 -   bpf.masquerade: Implements masquerading through BPF instead of iptables
 
 ![[Raw/Media/Resources/1506b926ae5be598ee66a9cee767bb15_MD5.png]]
-
+```sh
 helm repo add cilium https://helm.cilium.io/  
 helm repo update
 
@@ -316,6 +316,7 @@ kube-system   service/kube-dns         ClusterIP   10.10.0.10      <none\>      
 \-A PREROUTING \-m comment \--comment "cilium-feeder: CILIUM\_PRE\_nat" \-j CILIUM\_PRE\_nat  
 \-A OUTPUT \-m comment \--comment "cilium-feeder: CILIUM\_OUTPUT\_nat" \-j CILIUM\_OUTPUT\_nat  
 \-A POSTROUTING \-m comment \--comment "cilium-feeder: CILIUM\_POST\_nat" \-j CILIUM\_POST\_nat
+```
 
 Verification and System Checks
 
@@ -328,6 +329,7 @@ Verification and System Checks
 -   CILIUMINTERNALIP: Corresponds to cilium\_host interface IP
 -   INTERNALIP: Node’s internal IP address
 
+```
 (⎈|kubernetes-admin@kubernetes:N/A) root@k8s-s:~# kubectl get crd  
 NAME                                         CREATED AT  
 ciliumcidrgroups.cilium.io                   2024-10-26T16:19:06Z  
@@ -341,6 +343,7 @@ ciliumnetworkpolicies.cilium.io              2024-10-26T16:19:07Z
 ciliumnodeconfigs.cilium.io                  2024-10-26T16:19:06Z  
 ciliumnodes.cilium.io                        2024-10-26T16:19:06Z  
 ciliumpodippools.cilium.io                   2024-10-26T16:19:06Z
+```
 
 Endpoint Verification: `kubectl get ciliumendpoints -A` Shows pod endpoints across all namespaces.
 
@@ -348,14 +351,17 @@ Network Driver Information: `ethtool -i ens5` Provides detailed information abou
 
 Connection Tracking Configuration: `iptables -t raw -S | grep notrack` Verifies the NOTRACK rules implementation. This setting is crucial for performance optimization as it bypasses connection tracking for specific packets, reducing processing overhead.
 
+```
 (⎈|kubernetes\-admin@kubernetes:N/A) root@k8s\-s:~\# kubectl get ciliumnodes  
 NAME     CILIUMINTERNALIP   INTERNALIP       AGE  
 k8s\-s    172.16.0.84        192.168.10.10    78s  
 k8s\-w1   172.16.2.121       192.168.10.101   77s  
 k8s\-w2   172.16.1.95        192.168.10.102   65s
+```
 
 The NOTRACK configuration is particularly important for performance optimization. By bypassing the connection tracking system (conntrack) for certain packets, it reduces processing overhead and improves overall network performance. This is especially beneficial for high-throughput scenarios where connection state tracking isn’t necessary.
 
+```
 (⎈|kubernetes-admin@kubernetes:N/A) root@k8s-s:~  
 NAMESPACE     NAME                           SECURITY IDENTITY   ENDPOINT STATE   IPV4           IPV6  
 kube-system   coredns-55cb58b774-qqpkh       43458               ready            172.16.0.51  
@@ -385,11 +391,13 @@ supports-priv-flags: no
 \-A CILIUM\_PRE\_raw \-d 192.168.0.0/16 \-m comment \--comment "cilium: NOTRACK for pod traffic" \-j CT \--notrack  
 \-A CILIUM\_PRE\_raw \-s 192.168.0.0/16 \-m comment \--comment "cilium: NOTRACK for pod traffic" \-j CT \--notrack  
 \-A CILIUM\_PRE\_raw \-m comment \--comment "cilium: NOTRACK for proxy traffic" \-j CT \--notrack
+```
 
 ## Cilium CLI Installation and Configuration Guide
 
 First, set up essential environment variables for the installation.
 
+```sh
 CILIUM\_CLI\_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/main/stable.txt)  
 CLI\_ARCH=amd64
 
@@ -399,28 +407,36 @@ curl -L --fail --remote-name-all https://github.com/cilium/cilium-cli/releases/d
 sha256sum --check cilium-linux-${CLI\_ARCH}.tar.gz.sha256sum  
 sudo tar xzvfC cilium-linux-${CLI\_ARCH}.tar.gz /usr/local/bin  
 rm cilium-linux-${CLI\_ARCH}.tar.gz{,.sha256sum}
+```
 
 ![[Raw/Media/Resources/d36372ba8e2af81484317624a249acab_MD5.png]]
 
+```
 (⎈|kubernetes-admin@kubernetes:N/A) root@k8s-s:~# export CILIUMPOD0=$(kubectl get -l k8s-app=cilium pods -n kube-system --field-selector spec.nodeName=k8s-s  -o jsonpath='{.items\[0\].metadata.name}')  
 alias c0="kubectl exec -it $CILIUMPOD0 -n kube-system -c cilium-agent -- cilium"  
 (⎈|kubernetes-admin@kubernetes:N/A) root@k8s-s:~# c0 status | grep KubeProxyReplacement  
 KubeProxyReplacement:    True   \[ens5   192.168.10.10 fe80::f2:e6ff:fe5d:bf8b (Direct Routing)\]
+```
 
 This creates a convenient alias for accessing the Cilium agent container.
 
+```
 c0 status | grep KubeProxyReplacement
+```
 
 This checks KubeProxyReplacement configuration and confirms direct routing for the 192.168.0.0/16 network range without IP masquerading.
 
+```
 (⎈|kubernetes-admin@kubernetes:N/A) root@k8s\-s:~  
 enable-bpf-masquerade                             true  
 enable-ipv4-masquerade                            true  
 enable-ipv6-masquerade                            true  
 enable-masquerade-to-route-source                 false
+```
 
 It verifies the use of eBPF masquerade instead of iptables masquerade.
 
+```
 (⎈|kubernetes-admin@kubernetes:N/A) root@k8s-s:~# helm upgrade cilium cilium/cilium --namespace kube-system --reuse-values --set ipMasqAgent.enabled=true  
 Release "cilium" has been upgraded. Happy Helming!  
 NAME: cilium  
@@ -437,10 +453,10 @@ Your release version is 1.16.3.
 For any further help, visit https://docs.cilium.io/en/v1.16/gettinghelp  
 (⎈|kubernetes-admin@kubernetes:N/A) root@k8s-s:~# export CILIUMPOD0=$(kubectl get -l k8s-app=cilium pods -n kube-system --field-selector spec.nodeName=k8s-s  -o jsonpath='{.items\[0\].metadata.name}')  
 alias c0="kubectl exec -it $CILIUMPOD0 -n kube-system -c cilium-agent -- cilium"
+```
 
 It enables NAT for pod traffic leaving the cluster, protecting pod IPs from external exposure.
-
-  
+```sh
 export CILIUMPOD0=$(kubectl get -l k8s-app=cilium pods -n kube-system --field-selector spec.nodeName=k8s-s  -o jsonpath='{.items\[0\].metadata.name}')  
 export CILIUMPOD1=$(kubectl get -l k8s-app=cilium pods -n kube-system --field-selector spec.nodeName=k8s-w1 -o jsonpath='{.items\[0\].metadata.name}')  
 export CILIUMPOD2=$(kubectl get -l k8s-app=cilium pods -n kube-system --field-selector spec.nodeName=k8s-w2 -o jsonpath='{.items\[0\].metadata.name}')
@@ -453,13 +469,16 @@ alias c2="kubectl exec -it $CILIUMPOD2 -n kube-system -c cilium-agent -- cilium"
 alias c0bpf="kubectl exec -it $CILIUMPOD0 -n kube-system -c cilium-agent -- bpftool"  
 alias c1bpf="kubectl exec -it $CILIUMPOD1 -n kube-system -c cilium-agent -- bpftool"  
 alias c2bpf="kubectl exec -it $CILIUMPOD2 -n kube-system -c cilium-agent -- bpftool"
+```
 
 ## Hubble UI Configuration
 
+```sh
 (⎈|kubernetes\-admin@kubernetes:N/A) root@k8s\-s:~\# kubectl patch \-n kube\-system svc hubble\-ui \-p '{"spec": {"type": "NodePort"}}'  
 HubbleUiNodePort\=$(kubectl get svc \-n kube\-system hubble\-ui \-o jsonpath\={.spec.ports\[0\].nodePort})  
 service/hubble\-ui patched  
 (⎈|kubernetes\-admin@kubernetes:N/A) root@k8s\-s:~\# echo \-e "Hubble UI URL = http://$(curl -s ipinfo.io/ip):$HubbleUiNodePort"  
+```
 Hubble UI URL \= http:
 
 -   The KubeProxyReplacement configuration enables Cilium to handle functions typically managed by kube-proxy, optimizing network performance.
@@ -471,6 +490,7 @@ Hubble UI URL \= http:
 
 Hubble Client serves as Cilium’s dedicated CLI tool for real-time monitoring and analysis of Kubernetes network flows. It provides deep visibility into network communications within your cluster.
 
+```
 HUBBLE\_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/hubble/master/stable.txt)  
 HUBBLE\_ARCH=amd64  
 if \[ "$(uname -m)" = "aarch64" \]; then HUBBLE\_ARCH=arm64; fi  
@@ -480,6 +500,7 @@ sudo tar xzvfC hubble-linux-${HUBBLE\_ARCH}.tar.gz /usr/local/bin
 rm hubble-linux-${HUBBLE\_ARCH}.tar.gz{,.sha256sum}
 
 cilium hubble port-forward &
+```
 
 This command establishes port forwarding in the background, enabling local access to Hubble services. The ampersand (&) ensures the process runs in the background, allowing you to continue using your terminal.
 
@@ -518,50 +539,69 @@ We deploy three distinct pods across different nodes:
 1.  netpod: A network testing pod using nicolaka/netshoot image on k8s-s node
 2.  webpod1: A web service pod using traefik/whoami on k8s-w1 node
 3.  webpod2: A second web service pod using traefik/whoami on k8s-w2 node
-
+```sh
 c0 status   
 c1 status   
 c2 status 
+```
 
 This shows how Cilium has allocated IP addresses and network resources across nodes.
 
+```
 kubectl get ciliumendpoints
+```
 
 Displays the Cilium endpoint information for each pod, confirming proper network registration.
 
 To streamline testing, we set up environment variables and aliases:
 
+```
 \# Pod IP variables  
 NETPODIP=$(kubectl get pods netpod -o jsonpath='{.status.podIP}')  
 WEBPOD1IP=$(kubectl get pods webpod1 -o jsonpath='{.status.podIP}')  
 WEBPOD2IP=$(kubectl get pods webpod2 -o jsonpath='{.status.podIP}')
+```
 
+```
 \# Command aliases  
 alias p0="kubectl exec -it netpod -- "  
 alias p1="kubectl exec -it webpod1 -- "  
 alias p2="kubectl exec -it webpod2 -- "
+```
 
+```
 p0 ip \-c \-4 addr
+```
 
 Shows the IPv4 address configuration within netpod.
 
+```
 p0 route -n
+```
 
 Displays the network routing table, showing how traffic is directed between pods.
 
+```
 p0 ping -c 1 $WEBPOD1IP && p0 ping -c 1 $WEBPOD2IP
+```
 
 Verifies basic network connectivity between pods using ICMP.
 
+```
 p0 curl -s $WEBPOD1IP && p0 curl -s $WEBPOD2IP
+```
 
 Tests HTTP connectivity to the web services.
 
+```
 p0 curl -s $WEBPOD1IP:8080 ; p0 curl -s $WEBPOD2IP:8080
+```
 
 Verifies service accessibility on specific ports.
 
+```
 p0 ping -c 1 8.8.8.8 && p0 curl -s wttr.in/seoul
+```
 
 Validates external network access and DNS resolution.
 
@@ -589,6 +629,7 @@ Each test is visualized in the Hubble UI, providing real-time network flow visib
 
 In our Kubernetes environment, we begin by creating a Service resource to manage traffic distribution to our web pods. The Service is configured as a ClusterIP type, targeting pods labeled with ‘app: webpod’ and exposing port 80. This setup creates an abstraction layer for accessing our web applications.
 
+```yaml
 apiVersion: v1  
 kind: Service  
 metadata:  
@@ -602,12 +643,17 @@ spec:
   selector:  
     app: webpod  
   type: ClusterIP
+```
 
 Upon verifying the Service creation, we observe an interesting architectural shift in how network rules are handled. Traditional Kubernetes implementations would create KUBE-SVC rules in iptables, but our investigation reveals that these rules are notably absent. Instead, we find Cilium-specific rules in iptables, demonstrating Cilium’s complete handling of service networking.
 
+```
 iptables-save | grep KUBE-SVC
+```
 
+```
 iptables-save | grep CILIUM
+```
 
 ![[Raw/Media/Resources/bf3aedcaebffdb4c76410950dbd5a265_MD5.png]]
 

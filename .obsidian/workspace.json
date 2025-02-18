@@ -4,39 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "413d4f66436d5ccc",
+        "id": "6a1041515b1cf54a",
         "type": "tabs",
         "children": [
           {
-            "id": "814149ddab531b8a",
+            "id": "123d0e9b1953e0fb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Raw/Notes/eBPF and Cillum CNI.md",
-                "mode": "preview",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "eBPF and Cillum CNI"
-            }
-          },
-          {
-            "id": "d0ee82b1cd6f1161",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Stuff/Articles.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Articles"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -103,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225,
-    "collapsed": true
+    "width": 225
   },
   "right": {
     "id": "60fe3580cc0200ed",
@@ -195,7 +175,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-local-images-plus:Local Images Plus  0.15.7\r\nDownload media files": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -205,28 +184,41 @@
       "obsidian-local-images-plus:Local Images Plus  0.16.3\r\nLocalize attachments (plugin folder)": false
     }
   },
-  "active": "d0ee82b1cd6f1161",
+  "active": "9de7cb0f58ed9a1a",
   "lastOpenFiles": [
-    "Raw/Notes/eBPF and Cillum CNI.md",
+    "Stuff/k8s/MetalLB/usage.md",
+    "Stuff/k8s/MetalLB/source_ip.md",
+    "Stuff/k8s/MetalLB.md",
+    "Stuff/k8s/MetalLB/install.md",
+    "Stuff/k8s/Ingress.md",
+    "Stuff/k8s/Overview.md",
+    "Stuff/k8s/MetalLB/l2-bgp.md",
+    "Stuff/k8s/MetalLB",
+    "Stuff/k8s/graphs/networking.canvas",
+    "Stuff/k8s/CNI/flannel.md",
+    "Stuff/k8s/CNI/antrea.md",
+    "Stuff/k8s/graphs/kubelet.canvas",
+    "Stuff/k8s/CRI/CRI-O.md",
+    "Stuff/k8s/CRI/containerd.md",
+    "Stuff/k8s/Ingress/mirror.md",
+    "Stuff/k8s/Ingress/cors.md",
+    "Stuff/k8s/Ingress/timeout.md",
+    "Stuff/k8s/Ingress/scope.md",
+    "Stuff/k8s/Ingress/redirect.md",
+    "Stuff/k8s/Ingress/proxy.md",
+    "Stuff/k8s/Ingress/log.md",
+    "Stuff/k8s/Ingress/upload.md",
+    "Stuff/k8s/Ingress/ingressclass.md",
+    "install.md",
+    "Stuff/k8s/Ingress/install.md",
+    "Stuff/k8s/Ingress",
+    "Stuff/k8s/CNI/cilium.md",
+    "Stuff/k8s/CNI/calico.md",
+    "Raw/Notes/Calico CNI and its networking mode.md",
     "Stuff/Articles.md",
-    "Stuff/kubectl.md",
-    "README.md",
-    "Snippets/Darwin/macos.md",
-    "Snippets/Darwin/dnsmasq.md",
     "Raw/Media/Resources/ec286c50ecb0b3ef5e44544cbcee5903_MD5.png",
     "Raw/Media/Resources/ee0eb5bdecd5973934e80ad904952f7f_MD5.png",
     "Raw/Media/Resources/f02ae05cda516e1c1148a249555d7b66_MD5.png",
-    "Raw/Notes/Learning Kubernetes VXLAN Network with Flannel.md",
-    "Raw/Notes/Основы iptables для начинающих. Часть 3. Таблица nat.md",
-    "Raw/Notes/RPC-based plugins in Go - Eli Bendersky's website.md",
-    "Raw/Notes/Death by a thousand microservices.md",
-    "Raw/Notes/Why I Will Never Use Alpine Linux Ever Again.md",
-    "Raw/Notes/A beginner’s guide to OpenTelemetry.md",
-    "Raw/Notes/OpenTelemetry Operator.md",
-    "Raw/Notes/Building Docker Images The Proper Way.md",
-    "Raw/Notes/Understanding Kubernetes’ Cluster Networking.md",
-    "Raw/Notes/Calico Routing Modes.md",
-    "Raw/Notes/Calico CNI and its networking mode.md",
     "Raw/Media/Resources/ffca6a6bd6eb362b22f0605fd56f80ec_MD5.jpg",
     "Raw/Media/Resources/fe20b5e75f892cbb2fb7484fd646df5f_MD5.png",
     "Raw/Media/Resources/fdff1db9e706af2811e8c0da1f5ca51d_MD5.png",
@@ -235,26 +227,13 @@
     "Raw/Media/Resources/fd12837ca734895e22c49a13f682cb24_MD5.png",
     "Raw/Media/Resources/fb76655cc806f3322c7ff8313a79b0c6_MD5.webp",
     "Raw/Media/Resources",
-    "Raw/Notes/Kubernetes network learning with Cilium and eBPF.md",
-    "Raw/Notes/A Deeper Dive of kube-scheduler.md",
     "Raw/Notes/Raw/Media/Resources",
     "Raw/Notes/Raw/Media",
     "Raw/Notes/Raw",
-    "Raw/Notes/Kubernetes ingress, deep dive.md",
-    "Raw/Notes/Kubernetes scheduler deep dive.md",
-    "Raw/Notes/Go Gets New Reflection-Based Protocol Buffers API.md",
-    "Raw/Notes/Simple Prometheus queries for metrics inspection.md",
-    "Raw/Notes/Demystifying Containers – Part IV Container Security.md",
-    "Raw/Notes/How to debug OpenShift operators on a live cluster using dlv.md",
-    "Raw/Notes/Exploring the basics of Istio traffic management.md",
     "Clippings",
     "CV/CV.pdf",
     "Work",
-    "Stuff/k8s/graphs/kubelet.canvas",
-    "Stuff/k8s/graphs/networking.canvas",
     "Raw/Media/buzzing-across-space-illustrated-childrens-guide-to-ebpf.pdf",
-    "CV/Prepare/Companies",
-    "CV/Prepare",
     "Stuff/k8s/graphs/workloads.canvas"
   ]
 }
